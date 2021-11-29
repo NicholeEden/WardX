@@ -1,0 +1,479 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD START -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>WARDx | @ViewBag.Title</title>
+
+    <!-- Font Awesome Icons [all.min.css] -->
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <!-- AdminLTE  [adminlte.min.css] -->
+    <link href="~/lib/AdminLTE/css/adminlte.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<!-- HEAD END -->
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- NAVBAR START -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- LEFT NAVBAR LINKS START -->
+            <ul class="navbar-nav">
+                <!--[SHOW / HIDE] START -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-widget="pushmenu"
+                       href="#"
+                       role="button">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+                <!--[SHOW / HIDE] END -->
+                <!-- HOME LINK START -->
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#"
+                       class="nav-link">Home</a>
+                </li>
+                <!-- HOME LINK END -->
+                <!-- STAFF LINK START -->
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#"
+                       class="nav-link">Staff</a>
+                </li>
+                <!-- STAFF LINK END -->
+                <!-- PATIENT LINK START -->
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#"
+                       class="nav-link">Patient</a>
+                </li>
+                <!-- PATIENT LINK END -->
+            </ul>
+            <!-- LEFT NAVBAR LINKS END -->
+            <!-- RIGHT NAVBAR LINKS START -->
+            <ul class="navbar-nav ml-auto">
+                <!-- MESSAGES DROPDOWN MENU START -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link"
+                       data-toggle="dropdown"
+                       href="#">
+                        <i class="far fa-comments"></i>
+                        <span class="badge badge-danger navbar-badge">3</span>
+                    </a>
+                    <!-- MESSAGES CONTAINER START -->
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <!-- MESSAGE START -->
+                        <a href="#" class="dropdown-item">
+                            <div class="media">
+                                <img src="~/img/lego-avatars/svg/001-lego.svg"
+                                     alt="User Avatar"
+                                     class="img-size-50 mr-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Brad Diesel
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Call me whenever you can...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- MESSAGE END -->
+                        <!-- MESSAGE START -->
+                        <a href="#" class="dropdown-item">
+                            <div class="media">
+                                <img src="~/img/lego-avatars/svg/001-lego.svg"
+                                     alt="User Avatar"
+                                     class="img-size-50 mr-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Brad Diesel
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Call me whenever you can...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- MESSAGE END -->
+                        <!-- MESSAGE FOOTER START -->
+                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                        <!-- MESSAGE FOOTER END -->
+                    </div>
+                    <!-- MESSAGES CONTAINER END -->
+                </li>
+                <!-- MESSAGES DROPDOWN MENU END -->
+                <!-- NOTIFICATIONS DROPDOWN MENU START -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link"
+                       data-toggle="dropdown"
+                       href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <!-- NOTIFICATIONS CONTAINER START -->
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <!-- NOTIFICATIONS HEADER START -->
+                        <span class="dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <!-- NOTIFICATIONS HEADER END -->
+                        <!-- NOTIFICATION START -->
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- NOTIFICATION END -->
+                        <!-- NOTIFICATION START -->
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> 8 friend requests
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <!-- NOTIFICATION END -->
+                        <!-- NOTIFICATION FOOTER START -->
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                        <!-- NOTIFICATION FOOTER END -->
+                    </div>
+                    <!-- NOTIFICATIONS CONTAINER END -->
+                </li>
+                <!-- NOTIFICATIONS DROPDOWN MENU END -->
+                <!-- CONTROL SIDEBAR [RIGHT] START -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-widget="control-sidebar"
+                       data-slide="true"
+                       href="#"
+                       role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+                <!-- CONTROL SIDEBAR [RIGHT] END -->
+            </ul>
+            <!-- RIGHT NAVBAR LINKS END -->
+        </nav>
+        <!-- NAVBAR END -->
+        <!-- MAIN SIDEBAR CONTAINER START -->
+        <aside class="main-sidebar sidebar-light-lightblue elevation-1">
+            <!-- BRAND LOGO START -->
+            <a href="#" class="brand-link">
+                <img src="~/img/techbuzz-logo.svg"
+                     alt="Logo Image"
+                     class="brand-image img-sm"
+                     style="opacity: .7">
+                <span class="ml-3 brand-text font-weight-light">WARDx ONLINE</span>
+            </a>
+            <!-- BRAND LOGO END -->
+            <!-- MAIN SIDEBAR CONTENT START -->
+            <div class="sidebar">
+                <!-- USER INFO START -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="~/img/lego-avatars/svg/002-lego.svg"
+                             class="img-circle elevation-2"
+                             alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#"
+                           class="d-block">Kleon Alkibiades</a>
+                    </div>
+                </div>
+                <!-- USER INFO END -->
+                <!-- SIDEBAR MENU START -->
+                <nav class="mt-2">
+                    <!-- SIDEBAR CONTAINER START -->
+                    <ul class="nav nav-pills nav-sidebar flex-column"
+                        data-widget="treeview"
+                        role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class -->
+                        <!-- SIDEBAR OPTION START -->
+                        <li class="nav-item has-treeview men">
+                            <!-- OPTION HEADER START -->
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    PATIENT PROFILE
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <!-- OPTION HEADER END -->
+                            <!-- LEVEL 1 CONTAINER START -->
+                            <ul class="nav nav-treeview">
+                                <!-- LEVEL 1 OPTION START -->
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-search nav-icon"></i>
+                                        <p>Search for Profile</p>
+                                    </a>
+                                </li>
+                                <!-- LEVEL 1 OPTION END -->
+                                <!-- LEVEL 1 & 2 CONTAINER START -->
+                                <li class="nav-item has-treeview">
+                                    <!-- LEVEL 1 OPTION START -->
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-edit nav-icon"></i>
+                                        <p>
+                                            Create Profile
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <!-- LEVEL 1 OPTION END -->
+                                    <!-- LEVEL 2 CONTAINER START -->
+                                    <ul class="nav nav-treeview ml-1" style="display: none;">
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Personal Information</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Next of Kin</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Emergency Contact</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Medical Aid Information</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Banking Information</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Guarantor Information</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                    </ul>
+                                    <!-- LEVEL 2 CONTAINER END -->
+                                </li>
+                                <!-- LEVEL 1 & 2 CONTAINER END -->
+                                <!-- LEVEL 1 OPTION START -->
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="fas fa-medkit nav-icon"></i>
+                                        <p>Diagnosis</p>
+                                    </a>
+                                </li>
+                                <!-- LEVEL 1 OPTION END -->
+                                <!-- LEVEL 1 & 2 CONTAINER START -->
+                                <li class="nav-item has-treeview">
+                                    <!-- LEVEL 1 OPTION START -->
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-share nav-icon"></i>
+                                        <p>
+                                            Referral
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <!-- LEVEL 1 OPTION END -->
+                                    <!-- LEVEL 2 CONTAINER START -->
+                                    <ul class="nav nav-treeview ml-1" style="display: none;">
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Create Referral</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                        <!-- LEVEL 2 OPTION START -->
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <i href="#" class="far fa-circle nav-icon"></i>
+                                                <p>Submit Referral</p>
+                                            </a>
+                                        </li>
+                                        <!-- LEVEL 2 OPTION END -->
+                                    </ul>
+                                    <!-- LEVEL 2 CONTAINER END -->
+                                </li>
+                                <!-- LEVEL 1 & 2 CONTAINER END -->
+                            </ul>
+                            <!-- LEVEL 1 CONTAINER END -->
+                        </li>
+                        <!-- SIDEBAR OPTION END -->
+                    </ul>
+                    <!-- SIDEBAR CONTAINER END -->
+                </nav>
+                <!-- SIDEBAR MENU END -->
+            </div>
+            <!-- MAIN SIDEBAR CONTENT END -->
+        </aside>
+        <!-- MAIN SIDEBAR CONTAINER END -->
+        <!-- BODY CONTAINER START -->
+        <div class="content-wrapper">
+            <!-- BODY HEADER START -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <!-- PAGE TITLE START -->
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Pateint Profile System</h1>
+                        </div>
+                        <!-- PAGE TITLE END -->
+                        <!-- NAVIGATION BREADCRUMBS START -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <!-- BREADCRUMB START -->
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <!-- BREADCRUMB END -->
+                                <!-- BREADCRUMB START -->
+                                <li class="breadcrumb-item"><a href="#">Patient Profile</a></li>
+                                <!-- BREADCRUMB END -->
+                                <!-- ACTIVE BREADCRUMB START -->
+                                <li class="breadcrumb-item active">Search</li>
+                                <!-- ACTIVE BREADCRUMB END -->
+                            </ol>
+                        </div>
+                        <!-- NAVIGATION BREADCRUMBS END -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- BODY HEADER END -->
+            <!-- CONTENT CONTAINER START -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div href="#">
+                        <!-- 12 COLUMN ROW START -->
+                        <div class="row">
+                            <!-- 3 COLUMN INFO BOX START -->
+                            <div class="col-lg-3 col-6">
+                                <!-- small card -->
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-lightblue">
+                                        <i class="fas fa-users"></i>
+                                    </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Registered Patients</span>
+                                        <span class="info-box-number">44</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3 COLUMN INFO BOX END -->
+                            <!-- 3 COLUMN INFO BOX START -->
+                            <div class="col-lg-3 col-6">
+                                <!-- small card -->
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-lightblue">
+                                        <i class="fas fa-copy"></i>
+                                    </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Referrals Submitted</span>
+                                        <span class="info-box-number">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3 COLUMN INFO BOX END -->
+                        </div>
+                        <!-- 12 COLUMN ROW END -->
+                        <!-- 12 COLUMN ROW START -->
+                        <div class="row">
+                            <!-- 6 COLUMN CARD START -->
+                            <div class="col-md-6">
+                                <div class="card card-outline card-primary">
+                                    <!-- CARD HEADER START -->
+                                    <div class="card-header">
+                                        <h3 class="card-title">Search for Patient Profile</h3>
+                                        <!-- CARD TOOLS START -->
+                                        <div class="card-tools">
+                                            <!-- This will cause the card to maximize when clicked -->
+                                            <button type="button"
+                                                    class="btn btn-tool"
+                                                    data-card-widget="maximize">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <!-- This will cause the card to collapse when clicked -->
+                                            <button type="button"
+                                                    class="btn btn-tool"
+                                                    data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- CARD TOOLS END -->
+                                    </div>
+                                    <!-- CARD HEADER END -->
+                                    <!-- CARD BODY START -->
+                                    <div class="card-body">
+                                        The body of the card
+                                    </div>
+                                    <!-- CARD BODY END -->
+                                    <!-- CARD FOOTER START -->
+                                    <div class="card-footer">
+                                        The footer of the card
+                                    </div>
+                                    <!-- CARD FOOTER END -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <!-- 6 COLUMN CARD START -->
+                        </div>
+                        <!-- 12 COLUMN ROW END -->
+                    </div>
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- CONTENT CONTAINER END -->
+        </div>
+        <!-- BODY CONTAINER END -->
+        <!-- CONTROL SIDEBAR START -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- SIDEBAR CONTENT START -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+            <!-- SIDEBAR CONTENT END -->
+        </aside>
+        <!-- CONTROL SIDEBAR END -->
+        <!-- PAGE FOOTER START -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+        <!-- PAGE FOOTER END -->
+    </div><!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS START -->
+    <!-- jQuery [jquery.min.js] -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 [bootstrap.bundle.min.js] -->
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App [adminlte.min.js] -->
+    <script src="~/lib/AdminLTE/js/adminlte.min.js"></script>
+    <!-- REQUIRED SCRIPTS END -->
+</body>
+</html>
+@RenderBody()

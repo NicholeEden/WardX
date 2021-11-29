@@ -1,0 +1,128 @@
+﻿@model VitalsModel
+<!--SIDEBAR NAV BAR-->
+@section treatmentMenu{
+    <li class="nav-item has-treeview men menu-open">
+        <!-- OPTION HEADER START -->
+        <a href="#" class="nav-link active">
+            <i class="fas fa-user-md"></i>
+            <p>
+                PATIENT TREATMENT
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <!-- OPTION HEADER END -->
+        <!-- LEVEL 1 CONTAINER START -->
+        <ul class="nav nav-treeview">
+            <!-- LEVEL 1 & 2 CONTAINER START -->
+            <li class="nav-item has-treeview menu-open">
+
+                <!-- LEVEL 1 OPTION START -->
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-edit nav-icon"></i>
+                    <p>
+                        Record Vitals
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <!-- LEVEL 1 OPTION END -->
+                <!-- LEVEL 2 CONTAINER START -->
+                <ul class="nav nav-treeview ml-1">
+                    <!-- LEVEL 2 OPTION START -->
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <i class="far fa-dot-circle nav-icon"></i>
+                            <p>Record Vital Signs</p>
+                        </a>
+                    </li>
+                    <!-- LEVEL 2 OPTION END -->
+                    <!-- LEVEL 2 OPTION START -->
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View Vitals</p>
+                        </a>
+                    </li>
+                    <!-- LEVEL 2 OPTION END -->
+                </ul>
+                <!-- LEVEL 2 CONTAINER END -->
+            </li>
+            <!-- LEVEL 1 & 2 CONTAINER END -->
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RequestDoctorNavPartial" />
+        </ul>
+        <!-- LEVEL 1 CONTAINER END -->
+    </li>
+}
+
+
+<!--PAGE HEADER-->
+<partial name="Header/RecordVitalsHeaderPartial" />
+
+<!--PAGE CONTENT-->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+            <div class="col-md-10">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" />
+            </div>
+
+            <form asp-controller="Treatment"
+                  asp-action="@nameof(ITreatmentController.RecordVitals)"
+                  class="col-md-6">
+
+
+                <div class="card card-lightblue">
+
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Vital Signs</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Cards/Treatment Cards/RecordVitals" model="Model.RecordVitals" />
+
+
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action="@nameof(ITreatmentController.RecordVitals)"
+                                type="submit"
+                                class="btn btn-outline-secondary">
+                            Cancel
+                        </button>
+                        <button asp-action="@nameof(ITreatmentController.RecordVitals)"
+                                type="submit"
+                                class="btn btn-outline-primary float-right">
+                            Submit
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(function () {
+
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+
+            $('[data-mask]').inputmask()
+        })
+    </script>
+}
+

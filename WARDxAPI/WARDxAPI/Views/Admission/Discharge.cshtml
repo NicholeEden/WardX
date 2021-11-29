@@ -1,0 +1,43 @@
+﻿@model CreateAdmissionModel
+<!-- SIDEBAR NAV SECTION -->
+@section AdmissionMenu{
+    <partial name="SidebarNav/DischargePartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/dischargePartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+    </div>
+    <!-- 12 COLUMN ROW END -->
+    <!-- 12 COLUMN ROW START -->
+    <div class="row justify-content-center">
+        <!-- ADD CARD HERE -->
+        <div class="col-md-8">
+            <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.AlertModel" />
+        </div>
+        <partial name="Card/Discharge/dischargePatientPartial" model="Model.PatientDischarge" />
+    </div>
+    <!-- 12 COLUMN ROW END -->
+
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            // date input mask
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            $('[data-mask]').inputmask()
+        })
+
+        $('#example').tooltip(options)
+    </script>
+}

@@ -1,0 +1,74 @@
+﻿@model ISubmitReferral
+
+<!-- REFERRAL SUMMARY START -->
+<div class="col-md-10">
+    <div class="card card-widget widget-user">
+        <!-- TITLE HEADER START -->
+        <div class="widget-user-header bg-info">
+            <h3 class="widget-user-username">
+                Please Confirm Below
+            </h3>
+            <h6 class="widget-user-desc">
+                The Referral Will Be Submitted
+            </h6>
+        </div>
+        <!-- TITLE HEADER END -->
+        <!-- ICON START -->
+        <div class="widget-user-image">
+            <!-- IMAGE STYLE AND LINK -->
+            <img class="rounded mx-auto d-block elevation-1 border-1 bg-light"
+                 src="~/img/medical/svg/042-medical-report.svg"
+                 alt="Medical report" />
+        </div>
+        <!-- ICON END -->
+        <!-- SUMMARY DETAIL START -->
+        <div class="card-footer">
+            <div class="row">
+                <!--  PATIENT SUMMARY DETAIL START -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <!-- NAME -->
+                        <h5 class="description-header">
+                            Patient
+                        </h5>
+                        <!-- GENDER -->
+                        <span class="description-text">
+                            @Model.PatientName | @Model.PatientGender
+                        </span>
+                    </div>
+                </div>
+                <!-- PATIENT SUMMARY DETAIL END -->
+                <!-- KIN SUMMARY DETAIL START -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <!-- NAME -->
+                        <h5 class="description-header">
+                            Diagnosed by
+                        </h5>
+                        <!-- GENDER AND RELATIONSHIP -->
+                        <span class="description-text">
+                            @Model.GPName | @Model.GPPracticeNumber (General Practitioner)
+                        </span>
+                    </div>
+                </div>
+                <!-- KIN SUMMARY DETAIL END -->
+                <!-- MED AID SUMMARY DETAIL START -->
+                <div class="col-sm-4">
+                    <div class="description-block">
+                        <!-- SCHEME NAME -->
+                        <h5 class="description-header">
+                            Referred to
+                        </h5>
+                        <!-- PLAN NAME -->
+                        <span class="description-text">
+                            @Model.SpecialistName | @Model.SpecialistPracticeNumber (Ward Specialist)
+                        </span>
+                    </div>
+                </div>
+                <!-- MED AID SUMMARY DETAIL END -->
+            </div>
+        </div>
+        <!-- SUMMARY DETAIL END -->
+    </div>
+</div>
+<!-- REFERRAL SUMMARY END -->

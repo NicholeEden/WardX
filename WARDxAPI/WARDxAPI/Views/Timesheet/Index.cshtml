@@ -1,0 +1,124 @@
+﻿@model WARDxAPI.Model.Timesheet.TimesheetModel
+<!-- BODY HEADER START -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <!-- PAGE TITLE START -->
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Page Header Goes Here</h1>
+            </div>
+            <!-- PAGE TITLE END -->
+            <!-- NAVIGATION BREADCRUMBS START -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">WARDx</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">Time Sheet</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- ACTIVE BREADCRUMB START -->
+                    <li class="breadcrumb-item active">Generate</li>
+                    <!-- ACTIVE BREADCRUMB END -->
+                </ol>
+            </div>
+            <!-- NAVIGATION BREADCRUMBS END -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- BODY HEADER END -->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- 6 COLUMN CARD START -->
+            <form asp-controller="Timesheet"
+                  class="col-md-10">
+                <div class="card card-lightblue">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Title Goes Here</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <div class="card-body">
+                        <!-- ADD CONTENT HERE -->
+                        <!-- NURSE SELECT INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="NurseID"></label>
+
+                            <!-- INPUT ITEM -->
+                            <select asp-for="NurseID"
+                                    asp-items="@(new SelectList(Model.NurseOptions, "Key", "Value"))"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    title="Please select a nurse">
+                            </select>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="NurseID"
+                                  style="display:inline" />
+                        </div>
+                        <!-- NURSE SELECT INPUT END -->
+                        <!-- SELECT INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="MonthID"></label>
+
+                            <!-- INPUT ITEM -->
+                            <select asp-for="MonthID"
+                                    asp-items="@(new SelectList(Model.MonthOptions, "Key", "Value"))"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    title="Please select a month">
+                            </select>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="MonthID"
+                                  style="display:inline" />
+                        </div>
+                        <!-- SELECT INPUT END -->
+                    </div>
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action="Viewsheet"
+                                type="submit"
+                                class="btn btn-outline-primary">
+                            Primary Action
+                        </button>
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-secondary float-right">
+                            Secondary Action
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+            <!-- 6 COLUMN CARD END -->
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->

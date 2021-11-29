@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<!-- HEAD START -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>WARDx | Error </title>
+
+    <!-- Font Awesome Icons [all.min.css] -->
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <!-- AdminLTE  [adminlte.min.css] -->
+    <link href="~/lib/AdminLTE/css/adminlte.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="~/lib/googlefontscss.css" rel="stylesheet" />
+</head>
+<!-- HEAD END -->
+<body class="hold-transition login-page" style="background-color:ghostwhite">
+    <!-- CONTAINER START -->
+    <div class="login-box">
+        <!-- TITLE START -->
+        <div class="login-logo">
+            <a href="#"><b>WARDx</b>ONLINE</a>
+            <br/>
+            <h5 >It would seem that we encountered an error, we'll look into it.</h5>
+        </div>
+        <!-- TITLE END -->
+        <form class="row">
+            <div class="col-12">
+                <button asp-controller="Home"
+                        asp-action="@nameof(IHomeController.Index)"
+                        type="submit"
+                        class="btn btn-outline-primary btn-block">Return back home</button>
+            </div>
+            <!-- /.col -->
+        </form>
+    </div>
+    <!-- CONTAINER END -->
+    <!-- REQUIRED SCRIPTS START -->
+    <!-- jQuery [jquery.min.js] -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 [bootstrap.bundle.min.js] -->
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App [adminlte.min.js] -->
+    <script src="~/lib/AdminLTE/js/adminlte.min.js"></script>
+    <!-- REQUIRED SCRIPTS END -->
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿<!-- Allows all pages to use tag helpers -->
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!-- ASP NET Identity-->
+@using Microsoft.AspNetCore.Identity
+@using BusinessLogic.Security
+@inject UserManager<WARDxUser> _userManager
+@inject SignInManager<WARDxUser> _signInManager
+<!-- Allows all views to use classes in these namespaces -->
+@using WARDxAPI.Model
+@using WARDxAPI.Model.Shared
+@using WARDxAPI.Model.Interface
+@using WARDxAPI.Interface
+@using EFCore.Interface
+@using WARDxAPI.Model.Interface.Profile
+@using WARDxAPI.Model.Profile
+@using WARDxAPI.Model.Admission

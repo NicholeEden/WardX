@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Admission\Card\SubmitReferral\**" />
+    <Content Remove="Views\Admission\Card\SubmitReferral\**" />
+    <EmbeddedResource Remove="Views\Admission\Card\SubmitReferral\**" />
+    <None Remove="Views\Admission\Card\SubmitReferral\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BusinessLogic" Version="1.1.141" />
+    <PackageReference Include="BusinessLogic.Security" Version="1.1.141" />
+    <PackageReference Include="EFCore.Interface" Version="1.1.207" />
+    <PackageReference Include="WARDx.Data" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WARDxAPI.Interface\WARDxAPI.Interface.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model.Interface\WARDxAPI.Model.Interface.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model\WARDxAPI.Model.csproj" />
+  </ItemGroup>
+
+
+</Project>

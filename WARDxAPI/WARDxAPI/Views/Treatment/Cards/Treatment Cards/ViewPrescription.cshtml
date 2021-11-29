@@ -1,0 +1,34 @@
+﻿@model ViewPrescription
+<div class="card-body">
+    <div class"form-group">
+        <div class="input-group input-group-lg">
+            <input type="search"
+                   class="form-control form-control-lg"
+                   placeholder="Type first or last name here">
+
+        </div>
+        <div class="card-body table-responsive p-0" style="height: 400px;">
+
+            <!-- TABLE START -->
+            <table class="table table-head-fixed table-hover text-nowrap">
+                <!-- TABLE HEADER START -->
+                <thead>
+                    <!-- ADD COLUMN HEADERS HERE -->
+                    <tr>
+                        <!-- 1st HEADER IS FOR BUTTONS -->
+                        <th></th>
+                        <th>PrescriptionID</th>
+                        <th>Medication Name</th>
+                        <th>Dosage</th>
+                        <th>Instructions</th>
+                        <th>Date Issued</th>
+                    </tr>
+                </thead>
+                <!-- TABLE HEADER END -->
+                <!-- ADD TABLE CONTENT HERE -->
+                <partial name="Cards/TablePartials/ViewPrescriptionPartial" model="Model.PrescriptionTableContents" />
+            </table>
+            <!-- TABLE END -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+CREATE OR ALTER PROCEDURE sp_SelectPatientNoReferral
+AS
+BEGIN
+	SET NOCOUNT ON
+	SELECT *
+	FROM Patient
+	WHERE PatientID NOT IN
+	(SELECT DISTINCT PatientID FROM AdmissionFile WHERE DischargeDate IS NULL)
+	AND PatientID NOT IN
+	(SELECT DISTINCT PatientID FROM Referral WHERE isAdmitted = 'True')
+END
+GO

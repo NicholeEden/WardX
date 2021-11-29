@@ -1,0 +1,184 @@
+﻿@model NextOfKinCreate
+
+<!-- 6 COLUMN CARD START -->
+<form asp-controller=""
+      asp-action=""
+      class="col-md-8">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Next of Kin</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body">
+            <!-- ADD CONTENT HERE -->
+            <!-- FIRST NAME INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="FirstName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="FirstName"
+                       class="form-control"
+                       placeholder="Enter name">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="FirstName" />
+            </div>
+            <!-- FIRST NAME INPUT END-->
+            <!-- LAST NAME INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="LastName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="LastName"
+                       class="form-control"
+                       placeholder="Enter surname">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="LastName" />
+            </div>
+            <!-- LAST NAME INPUT END-->
+            <!-- GENDER SELECT INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="Gender"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="Gender"
+                        asp-items="Html.GetEnumSelectList<Gender>()"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select gender">
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="Gender"
+                      style="display:inline" />
+            </div>
+            <!-- GENDER SELECT INPUT END -->
+            <!-- RELATIONSHIP INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="Relationship"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="Relationship"
+                       class="form-control"
+                       placeholder="Relationship with patient">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="Relationship" />
+            </div>
+            <!-- RELATIONSHIP INPUT END-->
+            <!-- EMAIL INPUT START-->
+            <div class="form-group">
+                <!-- INPUT LABEL -->
+                <label asp-for="EmailAddress"></label>
+                <!-- INPUT ITEM -->
+                <input asp-for="EmailAddress"
+                       class="form-control"
+                       placeholder="Enter email">
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="EmailAddress" />
+            </div>
+            <!-- EMAIL INPUT END-->
+            <!-- MOBILE INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="MobileNumber"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="MobileNumber"
+                       class="form-control"
+                       placeholder="Enter mobile number">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="MobileNumber" />
+            </div>
+            <!-- MOBILE INPUT END-->
+            <!-- ADDRESS INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="AddressLine1"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="AddressLine1"
+                       class="form-control"
+                       placeholder="Enter address">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="AddressLine1" />
+            </div>
+            <!-- ADDRESS INPUT END-->
+            <!-- ADDRESS INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="AddressLine2"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="AddressLine2"
+                       class="form-control"
+                       placeholder="Enter address">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="AddressLine2" />
+            </div>
+            <!-- ADDRESS INPUT END-->
+            <!-- SUBURB INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="SuburbID"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="SuburbID"
+                        asp-items="@(new SelectList(Model.SuburbList, "Key", "Value"))"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select suburb">
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="SuburbID"
+                      style="display:inline" />
+            </div>
+            <!-- SUBURB INPUT END -->
+        </div>
+        <!-- CARD BODY END -->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer"
+             id="card-buttons">
+            <!-- ADD BUTTONS HERE -->
+            <a asp-action="@nameof(IProfileController.Create)"
+               type="submit"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+            <button asp-action="@nameof(IProfileController.NextofKin)"
+                    type="submit"
+                    class="btn btn-outline-primary float-right">
+                Medical Aid
+            </button>
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- 6 COLUMN CARD END -->

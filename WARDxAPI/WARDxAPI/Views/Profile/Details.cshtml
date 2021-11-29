@@ -1,0 +1,78 @@
+﻿@model IProfileDetailsModel
+<!-- Uses ASP NET Identity -->
+@{ var user = _userManager.FindByNameAsync(User.Identity.Name); }
+<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="SidebarNav/detailPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/detailsPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-12">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.Alert" />
+            </div>
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- AVATAR AREA START -->
+            @switch (user.Result.RoleID)
+            {
+                case WARDxRoles.Specialist:
+                    <partial name="Card/Details/avatarPartial-doc" model="Model.PatientInfo" />
+                    break;
+                case WARDxRoles.General_Practitioner:
+                    <partial name="Card/Details/avatarPartial-gp" model="Model.PatientInfo" />
+                    break;
+                case WARDxRoles.Nurse:
+                    <partial name="Card/Details/avatarPartial-nur" model="Model.PatientInfo" />
+                    break;
+                case WARDxRoles.Sister_Nurse:
+                    <partial name="Card/Details/avatarPartial-nur" model="Model.PatientInfo" />
+                    break;
+                case WARDxRoles.Ward_Manager:
+                    <partial name="Card/Details/avatarPartial-nur" model="Model.PatientInfo" />
+                    break;
+                default:
+                    <partial name="Card/Details/avatarPartial" model="Model.PatientInfo" />
+                    break;
+            }
+            <!-- AVATAR AREA END -->
+            <!-- CONTEXT AREA START -->
+            <partial name="Card/Details/profilePartial" model="Model.PatientInfo" />
+            <!-- CONTEXT AREA START -->
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            // submit loading state
+            $(function () {
+                // select submit event on form
+                $('form').submit('submit', function () {
+                    // check form validity
+                    if ($(this).valid()) {
+                        // create loading overlay
+                        var overlay = $('<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>');
+                        // select card footer
+                        var card = $('#card-buttons');
+                        // add overlay after footer
+                        $(card).after(overlay);
+                    }
+                });
+            });
+        })
+    </script>
+}

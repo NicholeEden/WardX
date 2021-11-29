@@ -1,0 +1,13 @@
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.deps.json
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Interface.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Interface.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.AssemblyReference.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfoInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfo.cs
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CoreCompileInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CopyComplete
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.pdb

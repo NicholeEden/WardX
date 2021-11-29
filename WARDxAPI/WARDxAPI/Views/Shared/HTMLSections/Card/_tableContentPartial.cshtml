@@ -1,0 +1,30 @@
+﻿@model IList<ICardTableContent>
+
+@if (Model is null)
+{
+    // no content to display
+}
+else
+{
+    <!-- TABLE BODY CONTENT START -->
+    <tbody>
+        <!-- ROW CONTENT HERE -->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <button asp-route-id="@item.Key"
+                            type="submit"
+                            class="btn btn-outline-primary btn-sm">
+                        Details
+                    </button>
+                </td>
+                <td>@item.Value1</td>
+                <td>@item.Value2</td>
+                <td>@item.Value3</td>
+                <td>@item.Value4</td>
+            </tr>
+        }
+    </tbody>
+    <!-- TABLE BODY CONTENT END -->
+}

@@ -1,0 +1,84 @@
+﻿@model ProfileCreateModel
+<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="SidebarNav/nextOfKinPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/createPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-12">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.Alert" />
+            </div>
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <partial name="Card/Create/nextOfKinPartial" model="Model.NextOfKinCreate" />
+            <!-- STATUS CARD START -->
+            <form asp-controller="Profile"
+                  class="col-md-4">
+                <div class="card">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header border-0">
+                        <h3 class="card-title">
+                            <i class="ion ion-android-list text-lightblue"></i>
+                            Progress tracker
+                        </h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <div class="card-body">
+                        <!-- ADD CONTENT HERE -->
+                        <partial name="HTMLSections/Card/Body/_statusboxPartial" model="Model.StatusBoxes" />
+                        <!-- ADD BUTTONS HERE -->
+                        <a asp-action="@nameof(IProfileController.Search)"
+                           type="button"
+                           class="btn btn-outline-secondary">
+                            Cancel All
+                        </a>
+                    </div>
+                    <!-- CARD BODY END -->
+                </div>
+            </form>
+            <!-- STATUS CARD END -->
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            // submit loading state
+            $(function () {
+                // select submit event on form
+                $('form').submit('submit', function () {
+                    // check form validity
+                    if ($(this).valid()) {
+                        // create loading overlay
+                        var overlay = $('<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>');
+                        // select card footer
+                        var card = $('#card-buttons');
+                        // add overlay after footer
+                        $(card).after(overlay);
+                    }
+                });
+            });
+        })
+    </script>
+}

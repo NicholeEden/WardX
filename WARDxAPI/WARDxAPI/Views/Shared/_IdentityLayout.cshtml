@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- HEAD START -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>WARDx | @ViewBag.Title</title>
+
+    <!-- Font Awesome Icons [all.min.css] -->
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <!-- AdminLTE  [adminlte.min.css] -->
+    <link href="~/lib/AdminLTE/css/adminlte.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<!-- HEAD END -->
+<body class="hold-transition login-page" style="background-color:ghostwhite">
+    <!-- LOGIN CONTAINER START -->
+    <div class="login-box">
+        <!-- TITLE START -->
+        <div class="login-logo">
+            <a asp-controller="Home">
+                <b>WARDx</b>ONLINE
+            </a>
+        </div>
+        <!-- TITLE END -->
+        <!-- ADD CONTENT HERE -->
+        @RenderBody()
+    </div>
+    <!-- LOGIN CONTAINER END -->
+    <!-- REQUIRED SCRIPTS START -->
+    <!-- jQuery [jquery.min.js] -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 [bootstrap.bundle.min.js] -->
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <partial name="HTMLSections/_jQuery-validatePartial" />
+    <!-- AdminLTE App [adminlte.min.js] -->
+    <script src="~/lib/AdminLTE/js/adminlte.min.js"></script>
+    <!-- REQUIRED SCRIPTS END -->
+</body>
+</html>

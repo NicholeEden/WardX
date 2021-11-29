@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>TechBuzz</Authors>
+    <Description>SQL Server Data Access Implementation for the WARDx Hospital Ward Management System</Description>
+    <Product>Data Access</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DatabaseAccess.cs~RFec31e1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess.Domain\DataAccess.Domain.csproj" />
+    <ProjectReference Include="..\DataAccess.Manager\DataAccess.Manager.csproj" />
+  </ItemGroup>
+
+</Project>

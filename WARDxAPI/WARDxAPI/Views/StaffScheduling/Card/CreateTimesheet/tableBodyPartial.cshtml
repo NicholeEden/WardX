@@ -1,0 +1,51 @@
+﻿@model GenerateTimesheet
+
+<div class="card-body">
+    <!-- ADD CONTENT HERE -->
+    <!-- INPUT START-->
+    <!-- SELECT INPUT START -->
+    <div class="form-group">
+
+        <!-- INPUT LABEL -->
+        <label asp-for="NurseID"></label>
+
+        <!-- INPUT ITEM -->
+        <select asp-for="NurseID"
+                asp-items="@(new SelectList(Model.NurseOptions, "Key", "Value"))"
+                class="selectpicker"
+                data-width="100%"
+                data-live-search="true"
+                title="Search and Select a Nurse ">
+        </select>
+
+        <!-- INPUT VALIDATION MESSAGE -->
+        <span asp-validation-for="NurseID"
+              style="display:inline" />
+    </div>
+
+    <!-- DATE RANGE INPUT START -->
+    <div class="form-group">
+
+        <!-- LABEL -->
+        <label asp-for="MonthID"></label>
+
+
+
+            <!-- INPUT ITEM -->
+            <select asp-for="MonthID"
+                    asp-items="@(new SelectList(Model.MonthOptions, "Key", "Value"))"
+                    class="selectpicker"
+                    data-width="100%"
+                    data-live-search="true"
+                    title="Search and Select a Nurse ">
+            </select>
+    </div>
+
+        <!-- VALIDATION -->
+        <span asp-validation-for="DateRange"></span>
+</div>
+    <!-- DATE RANGE INPUT END -->
+    <!-- SELECT INPUT END -->
+    <!-- INPUT END-->
+
+

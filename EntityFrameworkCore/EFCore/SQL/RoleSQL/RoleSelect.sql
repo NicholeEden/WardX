@@ -1,0 +1,9 @@
+
+CREATE OR ALTER PROCEDURE sp_SelectRole
+AS
+SET NOCOUNT ON
+BEGIN
+    SELECT RoleID, RoleName
+    FROM [Role]
+END
+GO

@@ -1,0 +1,160 @@
+﻿@model PatientTreatmentModel
+<!-- BODY HEADER START -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <!-- PAGE TITLE START -->
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Page Header Goes Here</h1>
+            </div>
+            <!-- PAGE TITLE END -->
+            <!-- NAVIGATION BREADCRUMBS START -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">WARDx</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">Treatment</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- ACTIVE BREADCRUMB START -->
+                    <li class="breadcrumb-item active">Record</li>
+                    <!-- ACTIVE BREADCRUMB END -->
+                </ol>
+            </div>
+            <!-- NAVIGATION BREADCRUMBS END -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- BODY HEADER END -->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- 6 COLUMN CARD START -->
+            <form asp-controller="PatientTreatment"
+                  class="col-md-10">
+                <div class="card card-lightblue">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Record Treatment</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <div class="card-body">
+                        <!-- ADD CONTENT HERE -->
+                        <!-- NURSE SELECT INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="NurseID"></label>
+
+                            <!-- INPUT ITEM -->
+                            <select asp-for="NurseID"
+                                    asp-items="@(new SelectList(Model.NurseOptions, "Key", "Value"))"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    title="Please select nurse">
+                            </select>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="NurseID"
+                                  style="display:inline" />
+                        </div>
+                        <!-- NURSE SELECT INPUT END -->
+                        <!-- SELECT INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="PatientID"></label>
+
+                            <!-- INPUT ITEM -->
+                            <select asp-for="PatientID"
+                                    asp-items="@(new SelectList(Model.PatientOptions, "Key", "Value"))"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    title="Please select patient">
+                            </select>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="PatientID"
+                                  style="display:inline" />
+                        </div>
+                        <!-- SELECT INPUT END -->
+                        <!-- SELECT INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="TreatmentTypeID"></label>
+
+                            <!-- INPUT ITEM -->
+                            <select asp-for="TreatmentTypeID"
+                                    asp-items="@(new SelectList(Model.TreatmentTypeOptions, "Key", "Value"))"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    title="Please select treatment">
+                            </select>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="TreatmentTypeID"
+                                  style="display:inline" />
+                        </div>
+                        <!-- SELECT INPUT END -->
+                        <!-- DETAIL INPUT START -->
+                        <div class="form-group">
+
+                            <!-- INPUT LABEL -->
+                            <label asp-for="ObservationNotes"></label>
+
+                            <!-- INPUT ITEM -->
+                            <textarea asp-for="ObservationNotes"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Enter treatment details here"></textarea>
+
+                            <!-- INPUT VALIDATION MESSAGE -->
+                            <span asp-validation-for="ObservationNotes" />
+                        </div>
+                        <!-- DETAIL INPUT END -->
+                    </div>
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action="Upload"
+                                type="submit"
+                                class="btn btn-outline-primary">
+                            Primary Action
+                        </button>
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-secondary float-right">
+                            Secondary Action
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+            <!-- 6 COLUMN CARD END -->
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->

@@ -1,0 +1,35 @@
+﻿<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="Sidebar/_sidebarTreatmentMenuPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/RequestDoctorHeaderPartial" />
+
+
+<!-- PAGE CONTENT-->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <form class="col-md-10">
+                <div class="input-group input-group-lg">
+                    <input type="search"
+                           class="form-control form-control-lg"
+                           placeholder="Type first or last name here">
+                </div>
+
+            </form>
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <partial name="Cards/Treatment Cards/RequestDoctor" />
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->

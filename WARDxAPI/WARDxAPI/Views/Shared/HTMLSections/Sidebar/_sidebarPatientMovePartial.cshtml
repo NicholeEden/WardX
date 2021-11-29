@@ -1,0 +1,50 @@
+﻿<li class="nav-item has-treeview men">
+	<!-- OPTION HEADER START -->
+	<a href="#" class="nav-link">
+		<i class="nav-icon fas fa-door-open"></i>
+		<p>
+			PATIENT MOVEMENT
+			<i class="right fas fa-angle-left"></i>
+		</p>
+	</a>
+	<!-- OPTION HEADER END -->
+	<!-- LEVEL 1 CONTAINER START -->
+	<ul class="nav nav-treeview">
+		<!-- LEVEL 1 OPTION START -->
+		<li class="nav-item">
+			<a asp-controller="PatientMove"  asp-action="CheckOut" class="nav-link">
+				
+				<i class="fas fa-minus-square nav-icon"></i>
+				<p>Check Out Patient</p>
+			</a>
+		</li>
+		<!-- LEVEL 1 OPTION END -->
+		<!-- LEVEL 1 OPTION START -->
+		<li class="nav-item">
+			<a asp-controller="PatientMove" asp-action="CheckIn" class="nav-link">
+				<i class="fas fa-check-square nav-icon"></i>
+				
+				<p>Check In Patient </p>
+			</a>
+		</li>
+		<!-- LEVEL 1 OPTION END -->
+		<!-- LEVEL 1 OPTION START -->
+		<li class="nav-item">
+			<a asp-controller="PatientMove" asp-action="Movements" class="nav-link">
+				<i class="fas fa-walking nav-icon"></i>
+				
+				<p>View Patient Movements</p>
+			</a>
+		</li>
+		<!-- LEVEL 1 OPTION END -->
+		<!-- LEVEL 1 OPTION START -->
+		<li class="nav-item">
+			<a asp-controller="PatientMove" asp-action="FollowUp" class="nav-link">
+				<i class="fas fa-envelope  nav-icon"></i>
+				<p>Follow Up</p>
+			</a>
+		</li>
+		<!-- LEVEL 1 OPTION END -->
+	</ul>
+	<!-- LEVEL 1 CONTAINER END -->
+</li>

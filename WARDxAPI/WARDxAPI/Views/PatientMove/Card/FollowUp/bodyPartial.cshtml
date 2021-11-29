@@ -1,0 +1,55 @@
+﻿@model moveFollow
+
+<div class="card-body">
+	<div class="form-group">
+		
+		<!-- INPUT SHOW PATIENT EMAIL START-->
+		<!-- INPUT LABEL -->
+		<label id="example"asp-for="toEmail"
+			   data-toggle="tooltip" data-placement="top"
+			   title="Select late patient"
+			   >Patient Email Address</label>
+
+		<div class="input-group mb-3">
+			<!--INPUT ICON GROUP -->
+			<!--<div class="input-group-prepend">
+				<span class="input-group-text">-->
+					<!--INPUT ICON NAME-->
+					<!--<i class="fas fa-at"></i>
+				</span>
+			</div>-->
+			<!--INPUT ITEM -->
+				<select asp-for="toEmail" class="selectpicker"
+						data-width="100%"
+						data-live-search="true"
+						title=" Select Patient Email   ">
+					<partial name="HTMLSections/Card/Body/_selectOptionPartial" model="Model.PatientEmailList" />
+				</select>
+			<!--<input asp-for="toEmail" class="form-control" placeholder="Subject:">-->
+			<!--INPUT VALIDATION MESSAGE-->
+			<span asp-validation-for="toEmail" style="display:inline" text/>
+		</div>
+
+	</div>
+	<div class="form-group">
+
+		<input asp-for="Subject" class="form-control" placeholder="Subject:">
+		<!--INPUT VALIDATION MESSAGE-->
+		<span asp-validation-for="Subject" style="display:inline" />
+	</div>
+
+	<div class="form-group">
+
+		<textarea asp-for="Body"  class="form-control" style="height: 300px">
+			
+         </textarea>
+		<!--INPUT VALIDATION MESSAGE-->
+		<span asp-validation-for="Body" style="display:inline" />
+
+	</div>
+
+
+</div>
+
+
+

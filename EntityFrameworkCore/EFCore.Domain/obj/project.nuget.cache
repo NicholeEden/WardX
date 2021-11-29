@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OmY1U1JMxRC7RpD4BNkkaXJQY4br4aU3UU1lOiaCWcXj6fleR+XrNEc/8/N/BSitKwSEEP/rPjSy6jounMSHRQ==",
+  "success": true,
+  "projectFilePath": "F:\\Documents\\Visual Studio 2019\\Repos\\WARDx_System\\EntityFrameworkCore\\EFCore.Domain\\EFCore.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\viwen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\viwen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\viwen\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

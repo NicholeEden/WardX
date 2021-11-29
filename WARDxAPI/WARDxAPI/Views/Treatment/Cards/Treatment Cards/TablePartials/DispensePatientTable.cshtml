@@ -1,0 +1,26 @@
+﻿@model IList<ICardTableContent>
+
+@if (Model is null)
+{
+    // no content to display
+}
+else
+{
+    <!-- TABLE BODY CONTENT START -->
+    <tbody>
+        <!-- ROW CONTENT HERE -->
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Value1</td>
+                <td>@item.Value2</td>
+                <td>@item.Value3</td>
+
+            </tr>
+        }
+    </tbody>
+    <!-- TABLE BODY CONTENT END -->
+}
+
+

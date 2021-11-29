@@ -1,0 +1,9 @@
+﻿
+CREATE OR ALTER PROCEDURE sp_GetShiftSlot
+AS
+SET NOCOUNT ON
+BEGIN
+    SELECT *
+    FROM ShiftSlot
+END
+GO

@@ -1,0 +1,9 @@
+CREATE OR ALTER PROCEDURE sp_SelectTreatment
+@PatientID int
+AS
+SET NOCOUNT ON
+BEGIN
+SELECT *
+FROM Treatment
+WHERE PatientID=@PatientID
+END

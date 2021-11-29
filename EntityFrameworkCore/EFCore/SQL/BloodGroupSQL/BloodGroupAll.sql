@@ -1,0 +1,6 @@
+CREATE OR ALTER PROCEDURE sp_SelectBloodGroup
+AS
+BEGIN
+SELECT *
+FROM BloodGroup
+END

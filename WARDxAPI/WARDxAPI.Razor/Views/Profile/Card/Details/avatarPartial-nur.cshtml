@@ -1,0 +1,62 @@
+﻿@model IPatientInfo
+
+<div class="col-md-3">
+    <!-- PROFILE SUMMARY CARD START -->
+    <div class="card card-primary card-outline">
+        <div class="card-body box-profile">
+            <!-- PROFILE AVATAR START -->
+            <div class="text-center">
+                <partial name="HTMLSections/Card/Header/_profileAvatarPartial" model="Model.Patient.Gender" />
+            </div>
+            <!-- PROFILE AVATAR END -->
+            <!-- PATIENT NAME -->
+            <h3 class="profile-username text-center">
+                @Model.Patient.FirstName @Model.Patient.LastName
+            </h3>
+            <!-- PATIENT GENDER -->
+            <p class="text-muted text-center">
+                @Model.Patient.Gender
+            </p>
+            <!-- PATIENT DETAIL START -->
+            <ul class="list-group list-group-unbordered mb-3">
+                <!-- PATIENT DATE OF BIRTH -->
+                <li class="list-group-item">
+                    <b>Date of Birth</b>
+                    <p class="float-right">
+                        @Model.Patient.DOB.ToShortDateString()
+                    </p>
+                </li>
+                <!-- PATIENT EMAIL -->
+                <li class="list-group-item">
+                    <b>Email</b>
+                    <p class="float-right">
+                        @Model.Patient.EmailAddress
+                    </p>
+                </li>
+                <!-- PATIENT MOBILE NUMBER -->
+                <li class="list-group-item">
+                    <b>Mobile number</b>
+                    <a class="float-right">
+                        @Model.Patient.MobileNumber
+                    </a>
+                </li>
+            </ul>
+            <!-- PATIENT DETAIL END -->
+            <!-- PATIENT TREATMENT BUTTON -->
+            <a asp-controller="Treatment"
+               asp-action="@nameof(ITreatmentController.Treatment)"
+               asp-route-id="@Model.Patient.PatientID"
+               class="btn btn-outline-primary btn-block">
+                Start Treatment
+            </a>
+            <!-- PATIENT DISPENSE BUTTON -->
+            <a asp-controller="Treatment"
+               asp-action="@nameof(ITreatmentController.Dispense)"
+               asp-route-id="@Model.Patient.PatientID"
+               class="btn btn-outline-primary btn-block">
+                Dispense Medication
+            </a>
+        </div>
+    </div>
+    <!-- PROFILE SUMMARY CARD END -->
+</div>

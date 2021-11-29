@@ -1,0 +1,74 @@
+﻿@model IConfirmCreate
+
+<!-- PROFILE SUMMARY START -->
+<div class="col-md-10">
+    <div class="card card-widget widget-user">
+        <!-- TITLE HEADER START -->
+        <div class="widget-user-header bg-info">
+            <h3 class="widget-user-username">
+                Please Confirm Below
+            </h3>
+            <h6 class="widget-user-desc">
+                A New Profile Will Be Created
+            </h6>
+        </div>
+        <!-- TITLE HEADER END -->
+        <!-- ICON START -->
+        <div class="widget-user-image">
+            <!-- IMAGE STYLE AND LINK -->
+            <img class="rounded mx-auto d-block elevation-1 border-1 bg-light"
+                 src="~/img/medical/svg/009-medical-record.svg"
+                 alt="Medical record" />
+        </div>
+        <!-- ICON END -->
+        <!-- SUMMARY DETAIL START -->
+        <div class="card-footer">
+            <div class="row">
+                <!--  PATIENT SUMMARY DETAIL START -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <!-- NAME -->
+                        <h5 class="description-header">
+                            Patient
+                        </h5>
+                        <!-- GENDER -->
+                        <span class="description-text">
+                            @Model.PatientName | @Model.PatientGender
+                        </span>
+                    </div>
+                </div>
+                <!-- PATIENT SUMMARY DETAIL END -->
+                <!-- KIN SUMMARY DETAIL START -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <!-- NAME -->
+                        <h5 class="description-header">
+                            Next of Kin
+                        </h5>
+                        <!-- GENDER AND RELATIONSHIP -->
+                        <span class="description-text">
+                            @Model.KinName | @Model.KinGender (@Model.Relationship)
+                        </span>
+                    </div>
+                </div>
+                <!-- KIN SUMMARY DETAIL END -->
+                <!-- MED AID SUMMARY DETAIL START -->
+                <div class="col-sm-4">
+                    <div class="description-block">
+                        <!-- SCHEME NAME -->
+                        <h5 class="description-header">
+                            Medical Aid
+                        </h5>
+                        <!-- PLAN NAME -->
+                        <span class="description-text">
+                            @Model.MedicalAidScheme | @Model.MedicalAidPlan (plan)
+                        </span>
+                    </div>
+                </div>
+                <!-- MED AID SUMMARY DETAIL END -->
+            </div>
+        </div>
+        <!-- SUMMARY DETAIL END -->
+    </div>
+</div>
+<!-- PROFILE SUMMARY END -->

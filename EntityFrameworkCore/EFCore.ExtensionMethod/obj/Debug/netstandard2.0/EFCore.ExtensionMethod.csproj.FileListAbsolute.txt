@@ -1,0 +1,15 @@
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.ExtensionMethod.deps.json
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.ExtensionMethod.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.ExtensionMethod.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.Domain.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.Interface.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.Domain.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\bin\Debug\netstandard2.0\EFCore.Interface.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.csproj.AssemblyReference.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.AssemblyInfoInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.AssemblyInfo.cs
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.csproj.CoreCompileInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.csproj.CopyComplete
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.ExtensionMethod\obj\Debug\netstandard2.0\EFCore.ExtensionMethod.pdb

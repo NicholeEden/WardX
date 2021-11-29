@@ -1,0 +1,8 @@
+﻿CREATE OR ALTER PROCEDURE sp_GetMonths
+AS
+SET NOCOUNT ON
+BEGIN
+    SELECT *
+    FROM [Month]
+END
+GO

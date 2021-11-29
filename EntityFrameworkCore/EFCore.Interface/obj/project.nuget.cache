@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bd3qdXmro0hW21t7crh8alwsKfWjVM6RNdjdxNA40gXSOPVicA0TVJkGG32rl3Y0Q58Sw9PTwmfnw/8B486Frw==",
+  "success": true,
+  "projectFilePath": "F:\\Documents\\Visual Studio 2019\\Repos\\WARDx_System\\EntityFrameworkCore\\EFCore.Interface\\EFCore.Interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\viwen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\viwen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,99 @@
+﻿@model PatientDiagnosis
+
+<!-- DIAGNOSIS CARD START -->
+<form asp-controller="Profile"
+      class="col-md-8">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Diagnosis Details</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body">
+            <!-- ADD CONTENT HERE -->
+            <!-- GP INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="DiagnosedBy"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="DiagnosedBy"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select doctor">
+                    <partial name="HTMLSections/Card/Body/_selectOptionPartial" model="Model.DoctorList" />
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="DiagnosedBy"
+                      style="display:inline" />
+            </div>
+            <!-- GP INPUT END -->
+            <!-- MED CONDITION INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="MedicalConditionID"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="MedicalConditionID"
+                        asp-items="@(new SelectList(Model.ConditionList, "Key", "Value"))"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select medical condition">
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="MedicalConditionID"
+                      style="display:inline" />
+            </div>
+            <!-- MED CONDITION INPUT END -->
+            <!-- DETAIL INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="DiagnosisDetals"></label>
+
+                <!-- INPUT ITEM -->
+                <textarea asp-for="DiagnosisDetals"
+                          class="form-control"
+                          rows="3"
+                          placeholder="Enter diagnosis details here">
+                            </textarea>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="DiagnosisDetals" />
+            </div>
+            <!-- DETAIL INPUT END -->
+
+        </div>
+        <!-- CARD BODY END -->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer"
+             id="card-buttons">
+            <!-- ADD BUTTONS HERE -->
+            <a asp-action="@nameof(IProfileController.Search)"
+                    type="submit"
+                    class="btn btn-outline-secondary">
+                Cancel
+            </a>
+            <button asp-action="@nameof(IProfileController.Diagnosis)"
+                    type="submit"
+                    class="btn btn-outline-primary float-right">
+                Create Referral
+            </button>
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- DIAGNOSIS CARD END -->

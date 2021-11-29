@@ -1,0 +1,87 @@
+﻿@model FollowUpModel
+
+<!-- SIDEBAR NAV SECTION -->
+@section movementMenu {
+	<partial name="HTMLSections/Sidebar/_sidebarPatientMovePartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/followUpPartial" />
+<div class="content">
+	<div class="container-fluid ">
+		<!--START OF ROW 1-->
+		<div class="row justify-content-center">
+			<partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" />
+		</div>
+		<div class="row justify-content-center">
+			<form asp-action="FollowUp"
+				  asp-controller="PatientMove" class="col-md-7">
+				<!--START OF CARD 1-->
+
+				<div class="card card-lightblue">
+					<div class="card-header">
+						<h3 class="card-title">Compose Follow Up Message</h3>
+					</div>
+
+					<!--CARD BODY-->
+
+					<partial name="Card/FollowUp/bodyPartial" model="Model.moveFollow" />
+
+					<!--/CARD BODY-->
+					<!--card-footer -->
+					<div id="card-buttons" class="card-footer text-center">
+						<button class="btn btn-outline-primary " onclick="SendEmail()">
+							<i class="far fa-envelope"></i>
+							Send
+						</button>
+					</div>
+					<!--/card-footer -->
+				</div>
+
+			</form>
+
+
+			<!--END OF CARD 1-->
+
+
+
+		</div>
+
+		<!--.container-fluid -->
+
+	</div>
+</div>
+@section Scripts{
+	<!-- Page Script -->
+	
+	<script>
+		$(function () {
+			//Add text editor
+			$('#compose-textarea').summernote()
+		})
+
+		// submit loading state
+		$(function () {
+			// select submit event on form
+			$('form').submit('submit', function () {
+				// check form validity
+				if ($(this).valid()) {
+					// create loading overlay
+					var overlay = $('<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>');
+					// select card footer
+					var card = $('#card-buttons');
+					// add overlay after footer
+					$(card).after(overlay);
+				}
+			});
+		});
+
+		$('#example').tooltip(options)
+	</script>
+	
+	<!-- End Page Script -->
+
+}
+
+
+

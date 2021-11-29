@@ -1,0 +1,10 @@
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\bin\Debug\netstandard2.0\EFCore.Interface.deps.json
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\bin\Debug\netstandard2.0\EFCore.Interface.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\bin\Debug\netstandard2.0\EFCore.Interface.pdb
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.csproj.AssemblyReference.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.AssemblyInfoInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.AssemblyInfo.cs
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.csproj.CoreCompileInputs.cache
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.dll
+F:\Documents\Visual Studio 2019\Repos\WARDx_System\EntityFrameworkCore\EFCore.Interface\obj\Debug\netstandard2.0\EFCore.Interface.pdb

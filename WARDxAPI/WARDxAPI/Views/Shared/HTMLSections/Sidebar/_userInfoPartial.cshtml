@@ -1,0 +1,21 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <!-- Uses ASP NET Identity -->
+    var user = _userManager.FindByNameAsync(User.Identity.Name);
+
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="~/img/lego-avatars/svg/@user.Result.Avatar-img.svg"
+                 class="img-circle elevation-2"
+                 alt="User Image">
+        </div>
+        <div class="info">
+            <a href="#"
+               class="d-block">@user.Result.FirstName @user.Result.LastName</a>
+        </div>
+    </div>
+}
+else
+{
+    // no log in details
+}

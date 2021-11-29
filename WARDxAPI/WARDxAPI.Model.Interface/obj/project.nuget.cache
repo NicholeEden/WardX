@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "dgSpecHash": "cYIhEKxkyXkT37eHdPMdzeNki/BlLNyX9VHD1GU9Df7r1ZGSITU8aIRBKdidb79iufn2muHb8119ZhL3IdkrWw==",
+  "success": false,
+  "projectFilePath": "F:\\Documents\\Visual Studio 2019\\Repos\\WARDx_System\\WARDxAPI\\WARDxAPI.Model.Interface\\WARDxAPI.Model.Interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\viwen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\viwen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package EFCore.Interface. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "EFCore.Interface",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package WARDx.Data. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "WARDx.Data",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package BusinessLogic.Model. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "BusinessLogic.Model",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

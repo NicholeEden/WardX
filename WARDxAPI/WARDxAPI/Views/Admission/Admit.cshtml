@@ -1,0 +1,52 @@
+﻿@model CreateAdmissionModel
+<!-- SIDEBAR NAV SECTION -->
+@section AdmissionMenu{
+    <partial name="SidebarNav/AdmitPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/admitPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <!--START OF ROW 1 !-->
+        <div class="row ">
+            <!-- TOP INFO BOXES START-->
+            <partial name="Card/Admit/AdmitInfoPartial" model="Model.PatientAdmit" />
+            <!-- TOP INFO BOXES START-->
+        </div>
+        <!--END OF ROW 1 !-->
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-8">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.AlertModel" />
+            </div>
+            <partial name="Card/Admit/admitPatientPartial" model="Model.PatientAdmit" />
+        </div>
+    </div>
+    <!-- 12 COLUMN ROW END -->
+    <!-- 12 COLUMN ROW START -->
+    <div class="row justify-content-center">
+        <!-- ADD CARD HERE -->
+
+    </div>
+    <!-- 12 COLUMN ROW END -->
+
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            // date input mask
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            $('[data-mask]').inputmask()
+        })
+
+        $('#example').tooltip(options)
+    </script>
+}

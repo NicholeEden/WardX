@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BusinessLogic.Model" Version="1.1.141" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="WARDx.Data" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WARDxAPI.Model.Interface\WARDxAPI.Model.Interface.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model.Shared\WARDxAPI.Model.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

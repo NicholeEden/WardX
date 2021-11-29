@@ -1,0 +1,40 @@
+﻿@model List<IStatusBoxModel>
+
+@foreach (var box in Model)
+{
+    <!-- STATUS BOX START -->
+    <div>
+        <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+            <p class="text-xl">
+                <!-- STATUS ICON -->
+                @if (box.isVerified)
+                {
+                    <i class="ion ion-ios-checkmark-outline text-success"></i>
+                }
+                else
+                {
+                    <i class="ion ion-ios-close-outline text-danger"></i>
+                }
+            </p>
+            <p class="d-flex flex-column text-right">
+                @if (box.isVerified)
+                {
+                    <!-- STATUS DESCRIPTION -->
+                    <span class="font-weight-bold text-success">
+                        Verified
+                    </span>
+                }
+                else
+                {
+                    <!-- STATUS DESCRIPTION -->
+                    <span class="font-weight-bold text-danger">
+                        Invalid
+                    </span>
+                }
+                <!-- SECTION NAME -->
+                <span class="text-muted">@box.SectionName</span>
+            </p>
+        </div>
+    </div>
+    <!-- STATUS BOX END -->
+}

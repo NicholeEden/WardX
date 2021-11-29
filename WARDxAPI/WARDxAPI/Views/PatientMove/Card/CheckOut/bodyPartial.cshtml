@@ -1,0 +1,50 @@
+﻿@model MoveCheckOut
+
+<div class="card-body">
+	<!-- ADD CONTENT HERE -->
+	
+	<div class="form-group">
+		<!-- SELECT PATIENT NAME INPUT START -->
+		<!-- INPUT SEARCH LABEL -->
+		<label id="example" asp-for="PatientID"
+			   data-toggle="tooltip" data-placement="top"
+			   title="Select Patient that needs to be checked out of the ward"> Patient Name</label>
+
+		<!-- INPUT ITEM -->
+		<!-- INPUT ITEM -->
+		<select  asp-for="PatientID"
+				class="selectpicker"
+				data-width="100%"
+				data-live-search="true"
+				title="Select Patient">
+			<partial name="HTMLSections/Card/Body/_selectOptionPartial" model="Model.PatientNamesList" />
+
+		</select>
+
+
+		<!-- INPUT VALIDATION MESSAGE -->
+		<span asp-validation-for="PatientID"
+			  style="display:inline" />
+
+
+		<label id="example" 
+			   data-toggle="tooltip"
+			   data-placement="top"
+			   title="Must select a reason for leaving the ward"
+			   asp-for="Reason"> Reason </label>
+
+		<!-- INPUT ITEM -->
+		<select asp-for="Reason"
+            asp-items="@(Html.GetEnumSelectList<Reason>())"
+				class="selectpicker"
+				data-width="100%"
+				data-live-search="true">
+				title="Select reason for leaving the ward">
+		</select>
+
+		<!-- INPUT VALIDATION MESSAGE -->
+		<span asp-validation-for="Reason"style="display:inline" />
+
+		<!-- SELECT CHECKOUT REASON INPUT END -->
+	</div>
+</div>

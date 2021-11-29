@@ -1,0 +1,69 @@
+﻿@model PatientDischarge
+
+
+<!-- 8 COLUMN CARD START -->
+<form asp-controller=""
+      asp-action=""
+      class="col-md-8">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Discharge Patient</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <!-- This will cause the card to maximize when clicked -->
+                <partial name="HTMLSections/Card/_maximizePartial" />
+                <!-- This will cause the card to minimize when clicked -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body">
+            <!-- ADD CONTENT HERE -->
+            <!-- SELECT PATIENT NAME INPUT START -->
+            <div class="form-group">
+                <!-- INPUT SEARCH LABEL -->
+                <label asp-for="PatientName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="PatientName"
+                       class="form-control"
+                       placeholder="Patient Name" disabled="disabled">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="PatientName"
+                      style="display:inline" />
+            </div>
+            <!-- SELECT PATIENT NAME INPUT END -->
+            <!-- SELECT DISCHARGE DATE INPUT START -->
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span style="display:inline" />
+            </div>
+            <!-- SELECT DISCHARGE DATE INPUT END -->
+            <!-- SELECT PRESCRIPTION START -->
+
+            <!-- SELECT PRESCRIPTION INPUT END -->
+        </div>
+        <!--CARD BODY END-->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer">
+            <!-- ADD BUTTONS HERE -->
+            <a asp-action="@nameof(IAdmissionController.AdmissionFile)"
+                    type="submit"
+                    class="btn btn-outline-secondary">
+                Cancel
+            </a>
+            <button asp-action="@nameof(IAdmissionController.Discharge)"
+                    type="submit"
+                    class="btn btn-outline-primary float-right">
+                Discharge
+            </button>
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- 6 COLUMN CARD END -->

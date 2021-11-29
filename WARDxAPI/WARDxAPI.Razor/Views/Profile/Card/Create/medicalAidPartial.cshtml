@@ -1,0 +1,142 @@
+﻿@model MedicalAidCreate
+
+<!-- 6 COLUMN CARD START -->
+<form asp-controller=""
+      asp-action=""
+      class="col-md-8">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Medical Aid</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body">
+            <!-- ADD CONTENT HERE -->
+            <!-- MEDICAL AID SCHEME SELECT INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="MedicalAidSchemeID"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="MedicalAidSchemeID"
+                        asp-items="@(new SelectList(Model.SchemeList, "Key", "Value"))"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select medical aid scheme">
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="MedicalAidSchemeID"
+                      style="display:inline" />
+            </div>
+            <!-- MEDICAL AID SCHEME SELECT INPUT END -->
+            <!-- MEDICAL AID PLAN SELECT INPUT START -->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="MedicalAidPlanID"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="MedicalAidPlanID"
+                        asp-items="@(new SelectList(Model.PlanList, "Key", "Value"))"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select medical aid plan">
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="MedicalAidPlanID"
+                      style="display:inline" />
+            </div>
+            <!-- MEDICAL AID PLAN SELECT INPUT END -->
+            <!-- MEMBER NUMBER INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="MemberNumber"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="MemberNumber"
+                       class="form-control"
+                       placeholder="Enter member number">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="MemberNumber" />
+            </div>
+            <!-- MEMBER NUMBER  INPUT END-->
+            <!-- PRINCIPAL NAME INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="PrincipalFirstName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="PrincipalFirstName"
+                       class="form-control"
+                       placeholder="Enter name">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="PrincipalFirstName" />
+            </div>
+            <!-- PRINCIPAL NAME INPUT END-->
+            <!-- PRINCIPAL LAST NAME INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="PrincipalLastName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="PrincipalLastName"
+                       class="form-control"
+                       placeholder="Enter surname">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="PrincipalLastName" />
+            </div>
+            <!-- PRINCIPAL LAST NAME INPUT END-->
+            <!-- DEPENDANT CODE INPUT START-->
+            <div class="form-group">
+
+                <!-- INPUT LABEL -->
+                <label asp-for="DependantCode"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="DependantCode"
+                       class="form-control"
+                       placeholder="Enter code">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="DependantCode" />
+            </div>
+            <!-- DEPENDANT CODE INPUT END-->
+        </div>
+        <!-- CARD BODY END -->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer"
+             id="card-buttons">
+            <!-- ADD BUTTONS HERE -->
+            <a asp-action="@nameof(IProfileController.NextofKin)"
+               type="submit"
+               class="btn btn-outline-secondary">
+                Back
+            </a>
+            <button asp-action="MedicalAid"
+                    type="submit"
+                    class="btn btn-outline-primary float-right">
+                Review and Confirm
+            </button>
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- 6 COLUMN CARD END -->

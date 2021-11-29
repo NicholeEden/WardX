@@ -1,0 +1,87 @@
+﻿@model TreatmentModel
+<!--SIDEBAR NAV BAR-->
+@section treatmentMenu{
+    <li class="nav-item has-treeview men menu-open">
+        <!-- OPTION HEADER START -->
+        <a href="#" class="nav-link active">
+            <i class="fas fa-user-md"></i>
+            <p>
+                PATIENT TREATMENT
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <!-- OPTION HEADER END -->
+        <!-- LEVEL 1 CONTAINER START -->
+        <ul class="nav nav-treeview">
+            <!-- LEVEL 1 OPTION START -->
+            <li class="nav-item">
+                <a asp-controller="Treatment"
+                   asp-action="Treatment"
+                   class="nav-link active">
+                    <i class="nav-icon fas fa-pills"></i>
+                    <p>Treatment</p>
+                </a>
+            </li>
+            <!-- LEVEL 1 OPTION END -->
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RecordVitalsNavPartial" />
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RequestDoctorNavPartial" />
+        </ul>
+        <!-- LEVEL 1 CONTAINER END -->
+    </li>
+}
+
+
+<!--PAGE HEADER-->
+<partial name="Header/TreatmentHeaderPartial" />
+
+<!--PAGE CONTENT-->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <form asp-controller="Treatment"
+                  asp-action="@nameof(ITreatmentController.Treatment)"
+                  class="col-md-6">
+                <div class="col-md-10">
+                    <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" />
+                </div>
+
+                <div class="card card-lightblue">
+
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Treatment</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Cards/Treatment Cards/RecordTreatment" model="Model.RecordTreatment" />
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-secondary">
+                            Cancel
+                        </button>
+                        <button asp-action="@nameof(ITreatmentController.Treatment)"
+                                type="submit"
+                                class="btn btn-outline-primary float-right">
+                            Submit
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+
+        </div>
+     </div>
+    </div>

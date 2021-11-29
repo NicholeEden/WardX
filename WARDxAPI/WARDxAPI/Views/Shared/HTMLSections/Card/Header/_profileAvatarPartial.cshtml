@@ -1,0 +1,36 @@
+﻿<!-- IMAGE BASED ON GENDER -->
+@model Gender
+
+@switch (Model)
+{
+    case Gender.Female:
+        <!-- PROFILE IMAGE -->
+        <img class="profile-user-img img-fluid img-circle"
+             src="~/img/medical-mask-avatars/svg/019-woman.svg"
+             alt="User profile picture">
+        break;
+    case Gender.Male:
+        <!-- PROFILE IMAGE -->
+        <img class="profile-user-img img-fluid img-circle"
+             src="~/img/medical-mask-avatars/svg/040-man.svg"
+             alt="User profile picture">
+        break;
+    case Gender.Intersex:
+        <!-- PROFILE IMAGE -->
+        <img class="profile-user-img img-fluid img-circle"
+             src="~/img/medical-mask-avatars/svg/048-an.svg"
+             alt="User profile picture">
+        break;
+    case Gender.Transgender:
+        <!-- PROFILE IMAGE -->
+        <img class="profile-user-img img-fluid img-circle"
+             src="~/img/medical-mask-avatars/svg/049-man.svg"
+             alt="User profile picture">
+        break;
+    default:
+        <!-- PROFILE IMAGE -->
+        <img class="profile-user-img img-fluid img-circle"
+             src="~/img/medical-mask-avatars/svg/028-man.svg"
+             alt="User profile picture">
+        break;
+}

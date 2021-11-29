@@ -1,0 +1,57 @@
+﻿<li class="nav-item has-treeview men">
+	<!-- OPTION HEADER START -->
+	<a href="#" class="nav-link">
+		<i class="nav-icon fas fa-clock"></i>
+		<p>
+			SCHEDULING
+			<i class="right fas fa-angle-left"></i>
+		</p>
+	</a>
+	<!-- OPTION HEADER END -->
+
+	<!-- LEVEL 1 CONTAINER START -->
+    <ul class="nav nav-treeview">
+
+        <!-- LEVEL 1 OPTION START -->
+        <li class="nav-item">
+            <a asp-controller="StaffScheduling" asp-action="CreateSchedule" class="nav-link">
+                <i class="nav-icon fas fa-edit nav-icon"></i>
+
+                <p> Create Schedule </p>
+            </a>
+        </li>
+        <!-- LEVEL 1 OPTION END -->
+
+        <!-- LEVEL 1 OPTION START -->
+        <li class="nav-item">
+            <a asp-controller="StaffScheduling" asp-action="ViewSchedule" class="nav-link">
+                <i class="nav-icon fas fa-calendar nav-icon" ></i>
+
+                <p> View Schedule </p>
+            </a>
+        </li>
+        <!-- LEVEL 1 OPTION END -->
+
+        <!-- LEVEL 1 OPTION START -->
+        <li class="nav-item">
+            <a asp-controller="StaffScheduling" asp-action="GenerateTimesheet" class="nav-link">
+                <i class="nav-icon fas fa-cogs nav-icon"></i>
+
+                <p> Generate Timesheet </p>
+            </a>
+        </li>
+        <!-- LEVEL 1 OPTION END -->
+
+        <!-- LEVEL 1 OPTION START -->
+        <li class="nav-item">
+            <a asp-controller="StaffScheduling" asp-action="ViewTimesheet" class="nav-link">
+                <i class="nav-icon fas fa-clipboard nav-icon"></i>
+
+                <p> View Timesheet </p>
+            </a>
+        </li>
+        <!-- LEVEL 1 OPTION END -->
+
+    </ul>
+	<!-- LEVEL 1 CONTAINER END -->
+</li>

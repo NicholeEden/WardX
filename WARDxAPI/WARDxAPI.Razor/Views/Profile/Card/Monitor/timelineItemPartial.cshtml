@@ -1,0 +1,53 @@
+﻿@model ITimeline
+<!-- TIME LINE LABEL START -->
+<div class="time-label">
+    <span class="bg-lightblue">@Model.LabelTitile</span>
+</div>
+<!-- TIME LINE LABEL END -->
+
+@foreach (var item in Model.TimelineItems)
+{
+    <!-- TIME LINE ITEM START -->
+<div>
+    <!-- ICON -->
+    @switch (item.FontawesomeIcon)
+    {
+        case FontAwesome.bed:
+            <i class="fas fa-bed bg-secondary"></i>
+            break;
+        case FontAwesome.medkit:
+            <i class="fas fa-medkit bg-secondary"></i>
+            break;
+        case FontAwesome.share:
+            <i class="fas fa-share bg-secondary"></i>
+            break;
+        case FontAwesome.signin:
+            <i class="fas fa-sign-in-alt bg-secondary"></i>
+            break;
+        case FontAwesome.signout:
+            <i class="fas fa-sign-out-alt bg-secondary"></i>
+            break;
+        default:
+            <i class="fas fa-pills bg-secondary"></i>
+            break;
+    }
+    <div class="timeline-item">
+        <!-- DATE AND TIME -->
+        <span class="time"><i class="fas fa-clock"></i> @item.DateTime</span>
+        <!-- TIMELINE HEADER -->
+        <h3 class="timeline-header">@item.ItemHeader</h3>
+        <!-- TIMELINE CONTENT -->
+        <div class="timeline-body">
+            @foreach (var body in item.ContentBody)
+            {
+                <p class="text-muted">@body</p>
+            }
+        </div>
+        <!-- TIMELINE FOOTER -->
+        @*<div class="timeline-footer">
+                <a class="btn btn-primary btn-sm">See more...</a>
+            </div>*@
+    </div>
+</div>
+    <!-- TIME LINE ITEM END -->
+}

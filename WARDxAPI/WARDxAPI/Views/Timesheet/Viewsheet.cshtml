@@ -1,0 +1,137 @@
+﻿@model WARDxAPI.Model.Timesheet.TimesheetModel
+<!-- BODY HEADER START -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <!-- PAGE TITLE START -->
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Page Header Goes Here</h1>
+            </div>
+            <!-- PAGE TITLE END -->
+            <!-- NAVIGATION BREADCRUMBS START -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">WARDx</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">Subsystem Name</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- ACTIVE BREADCRUMB START -->
+                    <li class="breadcrumb-item active">Current Page</li>
+                    <!-- ACTIVE BREADCRUMB END -->
+                </ol>
+            </div>
+            <!-- NAVIGATION BREADCRUMBS END -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- BODY HEADER END -->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- 6 COLUMN CARD START -->
+            <form asp-controller=""
+                  asp-action=""
+                  class="col-md-10">
+                <div class="card card-lightblue">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Title Goes Here</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <div class="card-body">
+                        <!-- ADD CONTENT HERE -->
+                        <!-- DATA TABLE START -->
+                        <table id="dtTable" class="table table-bordered table-striped">
+                            <!-- HEADER START -->
+                            <thead>
+                                <tr>
+                                    <!-- BUTTON HEADER -->
+                                    <th>ACTION</th>
+                                    <!-- COLUMN HEADER START-->
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Reason</th>
+                                    <!-- COLUMN HEADER END -->
+                                </tr>
+                            </thead>
+                            <!-- HEADER END -->
+                            <!-- ADD CONTENT HERE -->
+                            @if (Model.TableContents is null)
+                            {
+                                // no content to display
+                            }
+                            else
+                            {
+                                <!-- TABLE BODY CONTENT START -->
+                                <tbody>
+                                    <!-- ROW CONTENT HERE -->
+                                    @foreach (var item in Model.TableContents)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <button asp-route-id="@item.Key"
+                                                        type="submit"
+                                                        class="btn btn-outline-primary btn-sm">
+                                                    Details
+                                                </button>
+                                            </td>
+                                            <td>@item.Value1</td>
+                                            <td>@item.Value2</td>
+                                            <td>@item.Value3</td>
+                                            <td>@item.Value4</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <!-- TABLE BODY CONTENT END -->
+                            }
+                        </table>
+                        <!-- DATA TABLE END -->
+                    </div>
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+            <!-- 6 COLUMN CARD END -->
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(function () {
+
+            $("#dtTable").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#dtTable_wrapper .col-md-6:eq(0)');
+        })
+    </script>
+}

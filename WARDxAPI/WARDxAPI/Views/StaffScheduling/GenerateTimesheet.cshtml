@@ -1,0 +1,82 @@
+﻿@model GenerateTimesheetModel
+<!-- SIDEBAR NAV SECTION -->
+@section appointmentMenu{
+    <partial name="HTMLSections/Sidebar/_sidebarAppointmentPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/generateTimesheetPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <div class="col-12"> </div>
+            <!-- ADD CARD HERE -->
+            <!-- 6 COLUMN CARD START -->
+            <form asp-controller="StaffScheduling"
+                  asp-action="ViewTimesheet"
+                  class="col-md-6">
+                <div class="card card-lightblue">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title"> Generate Timesheet </h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+                            <!-- This will cause the card to maximize when clicked -->
+                            <partial name="HTMLSections/Card/_maximizePartial" />
+
+                            <!-- This will cause the card to minimize when clicked -->
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Card/CreateTimesheet/tableBodyPartial" model="@Model.GenerateTimesheet" />
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer text-center">
+                        <!-- ADD BUTTONS HERE -->
+
+                        <button asp-action="ViewTimesheet"
+                                type="submit"
+                                class="btn btn-outline-primary">
+                            Generate
+                        </button>
+
+
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+            <!-- 6 COLUMN CARD END -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->
+@section Scripts{
+    <script>
+        $(function () {
+            $('#rangePicker').daterangepicker({
+                locale: {
+                    format: 'DD/MM/YYYY'
+                }
+            })
+        })
+    </script>
+}

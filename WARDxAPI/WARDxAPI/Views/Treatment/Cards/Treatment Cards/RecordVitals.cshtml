@@ -1,0 +1,182 @@
+﻿@model RecordVitals
+<div class="card-body">
+    <div class="form-group">
+        <!-- INPUT START-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+
+            <!-- INPUT LABEL -->
+            <label id="#example" asp-for="BloodGroupID"
+                   data-toggle="tooltip" data-placement="top"
+                   title="Select Patient's blood group from List">
+                Blood Group Name
+            </label>            <!-- INPUT ITEM -->
+            <select asp-for="BloodGroupID"
+                    class="selectpicker"
+                    data-width="100%"
+                    data-live-search="true"
+                    title="BloodGroupID">
+                <partial name="HTMLSections/Card/Body/_selectOptionPartial2" model="Model.BloodGroupList" />
+
+            </select>
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="BloodGroupID" style="display:inline" />
+        </div>
+        <div class="input-group mb-3">
+
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-heartbeat"></i>
+                </span>
+            </div>
+            <!-- INPUT ITEM -->
+            <input asp-for="Hypoglycemia"
+                   class="form-control"
+                   placeholder="Hypoglycemia">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="Hypoglycemia" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-thermometer-three-quarters"></i>
+                </span>
+            </div>
+
+            <!-- INPUT ITEM -->
+            <input asp-for="BodyTemperature"
+                   class="form-control"
+                   placeholder="Body Temperature">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="BodyTemperature" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-heartbeat"></i>
+                </span>
+            </div>
+
+            <!-- INPUT ITEM -->
+            <input asp-for="PulseRate"
+                   class="form-control"
+                   placeholder="Pulse Rate">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="PulseRate" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-heartbeat"></i>
+                </span>
+            </div>
+
+            <!-- INPUT ITEM -->
+            <input asp-for="BloodPressure"
+                   type="text"
+                   class="form-control"
+                   data-inputmask-inputformat ="_ _ _/ _ _ _"
+                   placeholder="Blood Pressure">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="BloodPressure" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-weight"></i>
+                </span>
+            </div>
+
+            <!-- INPUT ITEM -->
+            <input asp-for="Weight"
+                   class="form-control"
+                   placeholder="Weight">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="Weight" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- INPUT LABEL -->
+
+        <div class="input-group mb-3">
+
+            <!-- INPUT ICON GROUP -->
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <!-- INPUT ICON NAME -->
+                    <i class="fas fa-weight"></i>
+                </span>
+            </div>
+
+            <!-- INPUT ITEM -->
+            <input asp-for="BMI"
+                   class="form-control"
+                   placeholder="Body Mass Index">
+
+            <!-- INPUT VALIDATION MESSAGE -->
+            <span asp-validation-for="BMI" style="display:inline" />
+
+        </div>
+        <!-- INPUT END-->
+        <!-- DATE INPUT MASK START -->
+        <!--<div class="form-group">-->
+            <!-- LABEL -->
+
+            <!--<div class="input-group">-->
+                <!-- ICON -->
+                <!--<div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="far fa-calendar-alt"></i>
+                    </span>
+                </div>-->
+                <!-- INPUT -->
+                <!--<input 
+                       type="text"
+                       class="form-control"
+                       data-inputmask-alias="datetime"
+                       data-inputmask-inputformat="dd/mm/yyyy" data-mask>-->
+
+                <!-- VALIDATION MESSAGE -->
+                <!--<span asp-validation-for="DateRecorded" style="display:inline" />
+
+            </div>
+        </div>-->
+        <!-- DATE INPUT MASK END -->
+    </div>
+</div>

@@ -1,0 +1,8 @@
+
+CREATE OR ALTER PROCEDURE sp_SelectPatientMovement
+AS
+BEGIN
+SET NOCOUNT ON
+SELECT *
+FROM PatientMovement
+END

@@ -1,0 +1,10 @@
+
+CREATE OR ALTER PROCEDURE sp_SelectVitalSignByID
+	@VitalSignID int
+AS
+BEGIN
+SET NOCOUNT ON
+	SELECT *
+	FROM VitalSign
+	WHERE VitalSignID=@VitalSignID
+END

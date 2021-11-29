@@ -1,0 +1,72 @@
+﻿<!-- SIDEBAR NAV SECTION -->
+@section movementMenu {
+	<partial name="HTMLSections/Sidebar/_sidebarPatientMovePartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/checkOutPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+	<div class="container-fluid">
+		<!-- 12 COLUMN ROW START -->
+		<!--START OF ROW 1-->
+		<div class="row">
+			<!--INFO BOX START-->
+			<!-- 3 COLUMN INFO BOX START -->
+			<partial name="Card/CheckOut/infoPartial" />
+			<!--INFO BOX END-->
+		</div>
+		<br />
+		<!--END OF ROW 1-->
+		<!--START OF ROW 2-->
+		<div class="row ">
+
+			<!-- ADD CARD HERE -->
+			<!-- 6 COLUMN CARD START -->
+			<form asp-controller=""
+				  asp-action=""
+				  class="col-md-6">
+				<div class="card card-lightblue">
+					<!-- CARD HEADER START -->
+					<partial name="Card/CheckOut/headerPartial" />
+					<!-- CARD HEADER END -->
+					<!-- CARD BODY START -->
+					<partial name="Card/CheckOut/bodyPartial" />
+
+					<!-- CARD BODY END -->
+					<!-- CARD FOOTER START -->
+					<div class="card-footer text-center ">
+						<!-- ADD BUTTONS HERE -->
+						<button asp-action=""
+								type="submit"
+								class="btn btn-outline-primary">
+							Check Out
+						</button>
+						@*<button asp-action=""
+							type="submit"
+							class="btn btn-outline-secondary float-right">
+						View Check Out Details
+					</button>*@
+
+					</div>
+
+					<!-- CARD FOOTER END -->
+				</div>
+
+			</form>
+
+			<!-- 6 COLUMN CARD END -->
+			<div>
+				<!--TABLE CARD START-->
+				<!--ADD CARD HERE -->
+				<partial name="Card/CheckOut/checkoutTablePartial" />
+			</div>
+		</div>
+			
+
+		</div>
+		<!--END OF ROW 2-->
+		<!-- 12 COLUMN ROW END -->
+	</div>
+	<!-- CONTENT CONTAINER END -->

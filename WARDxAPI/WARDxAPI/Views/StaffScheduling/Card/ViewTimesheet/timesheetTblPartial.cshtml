@@ -1,0 +1,22 @@
+﻿<div class="card-body  table-responsive p-0" style="height: 300px;">
+	@*The body of the card*@
+	<!-- TABLE START -->
+	<table class="table table-head-fixed table-hover text-nowrap table-bordered table-striped">
+		<!-- TABLE HEADER START -->
+		<thead>
+			<!-- ADD COLUMN HEADERS HERE -->
+			<tr>
+				<!-- 1st HEADER IS FOR BUTTONS -->
+				<th>Patient</th>
+				<th>Reason</th>
+				<th>CheckInTime</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<!-- TABLE HEADER END -->
+		<!-- ADD TABLE CONTENT HERE -->
+		<partial name="Card/CheckIn/_tableContentPartial" model="ViewBag.Card" />
+	</table>
+	<!-- TABLE END -->
+
+</div>

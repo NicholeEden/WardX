@@ -1,0 +1,8 @@
+﻿CREATE OR ALTER PROCEDURE sp_SelectSuburb
+AS
+BEGIN
+SET NOCOUNT ON
+    SELECT *
+    FROM Suburb
+END
+GO

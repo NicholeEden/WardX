@@ -1,0 +1,25 @@
+﻿@model MoveReport
+<div class="card-body">
+	@*The body of the card*@
+	<!-- TABLE START -->
+	<table id="dtTable2" class="table table-head-fixed table-hover text-nowrap table-bordered table-striped">
+		<!-- TABLE HEADER START -->
+		<thead>
+			<!-- ADD COLUMN HEADERS HERE -->
+			<tr>
+				<!-- 1st HEADER IS FOR BUTTONS -->
+				<th>Patient</th>
+				<th>Admission File</th>
+				<th>Check Out Time</th>
+				<th>Check In Rime</th>
+				<th>Reason</th>
+				
+			</tr>
+		</thead>
+		<!-- TABLE HEADER END -->
+		<!-- ADD TABLE CONTENT HERE -->
+		<partial name="Card/Movements/_movetableContentPartial" model="Model.CheckOuttableContents" />
+	</table>
+	<!-- TABLE END -->
+
+</div>

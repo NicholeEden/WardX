@@ -1,0 +1,29 @@
+﻿@model DispenseModel 
+<div class="card-body">
+    <div class="form-group">
+        <div class="card-body table-responsive p-0" style="height: 400px;">
+
+            <!-- TABLE START -->
+            <table class="table table-head-fixed table-hover text-nowrap">
+                <!-- TABLE HEADER START -->
+                <thead>
+                    <!-- ADD COLUMN HEADERS HERE -->
+                    <tr>
+                        <!-- 1st HEADER IS FOR BUTTONS -->
+                        <th>Doctor First Name</th>
+                        <th>Doctor Last Name</th>
+                        <th>Speciality</th>
+                    </tr>
+                </thead>
+                <!-- TABLE HEADER END -->
+                <!-- ADD TABLE CONTENT HERE -->
+                <partial name="Cards/TablePartials/DispensePartial" model="Model.Dispense" />
+
+
+            </table>
+            <!-- TABLE END -->
+            
+            <!-- TABLE END -->
+        </div>
+    </div>
+</div>

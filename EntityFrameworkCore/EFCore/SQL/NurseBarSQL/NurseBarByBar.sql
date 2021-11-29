@@ -1,0 +1,11 @@
+﻿
+CREATE OR ALTER PROCEDURE sp_GetNurseBarByBar
+  @BarID int
+AS
+SET NOCOUNT ON
+BEGIN
+    SELECT BarID
+    FROM NurseBar
+    WHERE BarID = @BarID
+END
+GO

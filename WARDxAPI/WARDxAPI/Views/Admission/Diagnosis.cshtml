@@ -1,0 +1,28 @@
+﻿@model ProfileReferModel
+
+<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="SidebarNav/diagnosisPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/referPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <partial name="Card/Referral/diagnosisPartial" model="Model.PatientDiagnosis"/>
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->

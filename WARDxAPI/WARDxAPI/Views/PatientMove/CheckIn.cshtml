@@ -1,0 +1,110 @@
+﻿@model CheckInModel
+<!-- SIDEBAR NAV SECTION -->
+@section movementMenu {
+	<partial name="HTMLSections/Sidebar/_sidebarPatientMovePartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/checkInPartial" />
+
+
+<div class="content">
+	<div class="container-fluid">
+
+		<!-- 12 COLUMN ROW START -->
+		<!--START OF ROW 1 !-->
+		
+		<!--END OF ROW 1 !-->
+		<!-- 12 COLUMN ROW END -->
+		<!--ALERT ROW-->
+		<div class="row justify-content-center">
+			<div class="col-12"><partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" /></div>
+		</div>
+
+		<!-- 12 COLUMN ROW START -->
+		<!--START OF ROW 2 !-->
+		<div class="row">
+			<!-- 6 COLUMN CARD START -->
+			<form asp-action="@nameof(IPatientMoveController.CheckIn)"
+				  asp-controller="PatientMove" class="col-md-12">
+
+				<div class="card card-lightblue">
+					<!-- CARD HEADER START -->
+					<partial name="Card/CheckIn/_ciheaderPartial" />
+					<!-- CARD HEADER END -->
+					<!-- CARD FORM START -->
+					<!-- CARD BODY START -->
+					<partial name="Card/CheckIn/_cibodyPartial" model="Model.moveCheckIn" />
+					<!-- CARD BODY END -->
+					<!-- CARD FOOTER START -->
+					<div class="card-footer text-center"
+						 id="card-buttons">
+
+						<!-- FOOTER CONTENT HERE -->
+						<button asp-action="@nameof(IPatientMoveController.CheckIn)"
+								type="submit"
+								class="btn btn-outline-primary ">
+							Check In
+						</button>
+					</div>
+					<!-- CARD FOOTER END -->
+				</div>
+
+			</form>
+			<!-- CARD FORM END -->
+			<!-- CARD END -->
+			<!-- 6 COLUMN CARD END -->
+			<!-- 6 COLUMN CARD START -->
+			
+				<!-- /.card -->
+			</div>
+			<!-- 6 COLUMN CARD START -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card card-lightblue">
+					<!-- CARD HEADER START -->
+					<partial name="Card/CheckIn/inHeaderPartial" />
+					<!-- CARD HEADER END -->
+					<!-- CARD BODY START -->
+					<partial name="Card/CheckIn/_cicheckInTablePartial" model="Model.moveCheckIn" />
+					<!-- CARD BODY END -->
+				</div>
+				<!-- CARD FOOTER END -->
+			</div>
+		</div>
+		</div>
+
+	</div>
+	<!--END OF ROW 2 !-->
+	<!-- 12 COLUMN ROW END -->
+<!-- /.container-fluid -->
+<!-- CONTENT CONTAINER END -->
+@section Scripts{
+	<script>
+        $(function () {
+
+            $("#dtTable2").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#dtTable2_wrapper .col-md-6:eq(0)');
+		})
+
+        // submit loading state
+        $(function () {
+            // select submit event on form
+            $('form').submit('submit', function () {
+                // check form validity
+                if ($(this).valid()) {
+                    // create loading overlay
+                    var overlay = $('<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>');
+                    // select card footer
+                    var card = $('#card-buttons');
+                    // add overlay after footer
+                    $(card).after(overlay);
+                }
+            });
+        });
+	</script>
+}

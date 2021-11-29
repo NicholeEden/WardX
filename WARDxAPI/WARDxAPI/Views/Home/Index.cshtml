@@ -1,0 +1,221 @@
+﻿@model IHomeModel
+<!-- BODY HEADER START -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <!-- PAGE TITLE START -->
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Welcome Back</h1>
+            </div>
+            <!-- PAGE TITLE END -->
+            <!-- NAVIGATION BREADCRUMBS START -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">WARDx</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- ACTIVE BREADCRUMB START -->
+                    <li class="breadcrumb-item active">Home</li>
+                    <!-- ACTIVE BREADCRUMB END -->
+                </ol>
+            </div>
+            <!-- NAVIGATION BREADCRUMBS END -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- BODY HEADER END -->
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- MOVEMENT REASONS -->
+            <div class="card col-md-10 mr-1">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                <span class="description-percentage text-info text-xl"> @Model.SmokeBreak</span><br />
+                                <span class="description-text">SMOKE BREAK</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                <span class="description-percentage text-info text-xl"> @Model.Surgery</span><br />
+                                <span class="description-text">SURGERY</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block border-right">
+                                <span class="description-percentage text-info text-xl"> @Model.BloodTest</span><br />
+                                <span class="description-text">BLOOD TEST</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-3 col-6">
+                            <div class="description-block">
+                                <span class="description-percentage text-info text-xl"> @Model.XRay</span><br />
+                                <span class="description-text">X-RAY</span>
+                            </div>
+                            <!-- /.description-block -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MOVEMENT REASONS -->
+        </div>
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <!-- ADMISSION -->
+            <div class="card col-md-6 mx-1">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Admission Overview</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <p class="text-info text-xl">
+                            <i class="fas fa-user-clock"></i>
+                        </p>
+                        <p class="d-flex flex-column text-right">
+                            <span class="font-weight-bold text-xl">
+                                @Model.PendingReferrals
+                            </span>
+                            <span class="text-muted">PENDING REFERRALS</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <p class="text-info text-xl">
+                            <i class="fas fa-procedures"></i>
+                        </p>
+                        <p class="d-flex flex-column text-right">
+                            <span class="font-weight-bold text-xl">
+                                @Model.AdmittedPatients
+                            </span>
+                            <span class="text-muted">PATIENTS ADMITTED</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center mb-0">
+                        <p class="text-info text-xl">
+                            <i class="fas fa-door-open"></i>
+                        </p>
+                        <p class="d-flex flex-column text-right">
+                            <span class="font-weight-bold text-xl">
+                                @Model.DischargedPatients
+                            </span>
+                            <span class="text-muted">PATIENTS DISCHARGED</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                </div>
+            </div>
+            <!-- ADMISSION -->
+            <div class="col-md-4 mx-1">
+                <a class="info-box mb-3 bg-info"
+                   asp-controller="Profile"
+                   asp-action="@nameof(IProfileController.Search)">
+                    <span class="info-box-icon"><i class="fas fa-users"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Search for Patient</span>
+                        <span class="info-box-number">Go to</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </a>
+                <a class="info-box mb-3 bg-info"
+                   asp-controller="Admission"
+                   asp-action="@nameof(IAdmissionController.AdmissionFile)">
+                    <span class="info-box-icon"><i class="fas fa-file-medical-alt"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">View Admission File</span>
+                        <span class="info-box-number">Go to</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </a>
+                <a class="info-box mb-3 bg-info"
+                   asp-controller="PatientMove"
+                   asp-action="@nameof(IPatientMoveController.CheckOut)">
+                    <span class="info-box-icon"><i class="fas fa-sign-out-alt"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Check Out Patient</span>
+                        <span class="info-box-number">Go to</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </a>
+                <a class="info-box bg-info"
+                   asp-controller="PatientMove"
+                   asp-action="@nameof(IPatientMoveController.CheckIn)">
+                    <span class="info-box-icon"><i class="fas fa-sign-in-alt"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Check In Patient</span>
+                        <span class="info-box-number">Go to</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </a>
+            </div>
+
+
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+
+            <!-- CHECK IN/OUT-->
+            <div class="card col-lg-10 mx-1">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Movement Overview</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                        <p class="text-success text-xl">
+                            <i class="ion ion-log-in"></i>
+                        </p>
+                        <p class="d-flex flex-column text-right">
+                            <span class="font-weight-bold text-xl">
+                                 @Model.CheckedIn
+                            </span>
+                            <span class="text-muted">PATIENTS CHECKED IN</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center mb-0">
+                        <p class="text-danger text-xl">
+                            <i class="ion ion-log-out"></i>
+                        </p>
+                        <p class="d-flex flex-column text-right">
+                            <span class="font-weight-bold text-xl">
+                                 @Model.CheckedOut
+                            </span>
+                            <span class="text-muted">PATIENTS CHECKED OUT</span>
+                        </p>
+                    </div>
+                    <!-- /.d-flex -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(function () {
+
+        })
+    </script>
+}

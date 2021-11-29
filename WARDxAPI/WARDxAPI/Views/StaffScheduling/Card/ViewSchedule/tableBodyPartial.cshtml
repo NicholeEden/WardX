@@ -1,0 +1,51 @@
+﻿@model ScheduleTable
+<div class="card-body table-responsive px-1" style="height: 400px;">
+    <!-- ADD CONTENT HERE -->
+    <!-- INPUT LABEL -->
+    <!-- TABLE START -->
+    <table class="table table-head-fixed table-hover text-nowrap "
+           id="dtTable">
+        <!-- TABLE HEADER START -->
+        <thead>
+            <!-- ADD COLUMN HEADERS HERE -->
+            <tr>
+                <!-- 1st HEADER IS FOR BUTTONS -->
+                <th></th>
+                <th> Employee No. </th>
+                <th> Name </th>
+                <th> Surname </th>
+                <th> Shift </th>
+                <th> Month </th>
+            </tr>
+        </thead>
+        <!-- TABLE HEADER END -->
+        <!-- ADD TABLE CONTENT HERE -->
+        @if (Model.CardTableContents is null)
+        {
+            // no content to display
+        }
+        else
+        {
+            <!-- TABLE BODY CONTENT START -->
+            <tbody>
+                <!-- ROW CONTENT HERE -->
+                @foreach (var item in Model.CardTableContents)
+                {
+                <tr>
+                    <td>
+                    </td>
+                    <td>@item.Value1</td>
+                    <td>@item.Value2</td>
+                    <td>@item.Value3</td>
+                    <td>@item.Value4</td>
+                    <td>@item.Value5</td>
+                </tr>
+                }
+            </tbody>
+            <!-- TABLE BODY CONTENT END -->
+        }
+
+    </table>
+    <!-- TABLE END -->
+
+</div>

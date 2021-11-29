@@ -1,0 +1,70 @@
+﻿@model IProfileTimelineModel
+
+<!-- BODY HEADER START -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <!-- PAGE TITLE START -->
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Patient Activity</h1>
+            </div>
+            <!-- PAGE TITLE END -->
+            <!-- NAVIGATION BREADCRUMBS START -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">WARDx</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- BREADCRUMB START -->
+                    <li class="breadcrumb-item">Profile</li>
+                    <!-- BREADCRUMB END -->
+                    <!-- ACTIVE BREADCRUMB START -->
+                    <li class="breadcrumb-item active">Monitor</li>
+                    <!-- ACTIVE BREADCRUMB END -->
+                </ol>
+            </div>
+            <!-- NAVIGATION BREADCRUMBS END -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- BODY HEADER END -->
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+
+            <div class="col-md-12">
+                <!-- TIME LINE START -->
+                <div class="timeline">
+                    @if (Model.DischargeTimeline.TimelineItems.Count > 0)
+                    {
+                        <partial name="Card/Monitor/timelineItemPartial" model="Model.DischargeTimeline" />
+                    }
+                    @*@if (Model.MovementTimeline.TimelineItems.Count > 0)
+                    {
+                        <partial name="Card/Monitor/timelineItemPartial" model="Model.MovementTimeline" />
+                    }*@
+                    @if (Model.AdmissionTimeline.TimelineItems.Count > 0)
+                    {
+                        <partial name="Card/Monitor/timelineItemPartial" model="Model.AdmissionTimeline" />
+                    }
+                    <partial name="Card/Monitor/timelineItemPartial" model="Model.ReferralTimeline" />
+                </div>
+                <!-- TIME LINE END -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+     </div>
+        <!-- 12 COLUMN ROW END -->
+</div>
+<!-- CONTENT CONTAINER END -->

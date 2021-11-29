@@ -1,0 +1,7 @@
+CREATE OR ALTER PROCEDURE sp_SelectMedication
+AS
+SET NOCOUNT ON
+BEGIN
+SELECT *
+FROM Medication
+END

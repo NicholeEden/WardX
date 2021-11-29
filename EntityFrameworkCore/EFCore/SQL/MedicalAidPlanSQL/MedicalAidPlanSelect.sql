@@ -1,0 +1,8 @@
+CREATE OR ALTER PROCEDURE sp_SelectMedicalAidPlan
+AS
+BEGIN
+SET NOCOUNT ON
+    SELECT *
+    FROM MedicalAidPlan
+END
+GO

@@ -1,0 +1,8 @@
+CREATE OR ALTER PROCEDURE sp_SelectMedicalCondition
+AS
+BEGIN
+SET NOCOUNT ON
+    SELECT *
+    FROM MedicalCondition
+END
+GO

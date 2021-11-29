@@ -1,0 +1,9 @@
+﻿@model List<WARDx.Data.SelectOption>
+
+@foreach (var item in Model)
+{
+    <option data-subtext="@item.Subtext"
+            value="@item.Key">
+        @item.Value
+    </option>
+}

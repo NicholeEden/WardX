@@ -1,0 +1,113 @@
+﻿@model PatientAdmit 
+
+<!-- 8 COLUMN CARD START -->
+<form asp-controller=""
+      asp-action=""
+      class="col-md-8">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Admit Patient</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <!-- This will cause the card to maximize when clicked -->
+                <partial name="HTMLSections/Card/_maximizePartial" />
+                <!-- This will cause the card to minimize when clicked -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body">
+            <!-- ADD CONTENT HERE -->
+            <!-- SELECT PATIENT NAME INPUT START -->
+            <div class="form-group">
+                <!-- INPUT SEARCH LABEL -->
+                <label asp-for="PatientName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="PatientName"
+                       class="form-control"
+                       placeholder="Patient Name" disabled="disabled">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="PatientName"
+                      style="display:inline" />
+            </div>
+            <!-- SELECT PATIENT NAME INPUT END -->
+            <!-- SELECT SPECIALIST NAME INPUT START -->
+            <div class="form-group">
+                <!-- INPUT SEARCH LABEL -->
+                <label asp-for="SpecialistName"></label>
+
+                <!-- INPUT ITEM -->
+                <input asp-for="SpecialistName"
+                       class="form-control"
+                       placeholder="Specialist Name" disabled="disabled">
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="SpecialistName"
+                      style="display:inline" />
+            </div>
+            <!-- SELECT SPECIALIST NAME INPUT END -->
+            <!-- SELECT BED INPUT START -->
+            <div class="form-group">
+                <!-- INPUT SEARCH LABEL -->
+                <label asp-for="BedID" id="example" for="BedID"
+                       data-toggle="tooltip" data-placement="top"
+                       title="Select bed that a patient will be admitted to"></label>
+
+                <!-- INPUT ITEM -->
+                <select asp-for="BedID"
+                        class="selectpicker"
+                        data-width="100%"
+                        data-live-search="true"
+                        title="Select available Beds">
+                    <partial name="HTMLSections/Card/Body/_selectOptionPartial" model="Model.BedList" />
+                </select>
+
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="BedID"
+                      style="display:inline" />
+            </div>
+            <!-- SELECT BED INPUT END -->
+            <!-- NOTES INPUT START -->
+            <div class="form-group">
+                <!-- INPUT SEARCH LABEL -->
+                <label asp-for="Notes" id="example" for="Notes"
+                       data-toggle="tooltip" data-placement="top"
+                       title="Fill in any notes of what occurred when admitting a patient/Type None"></label>
+
+                <!-- INPUT ITEM -->
+                <textarea asp-for="Notes"
+                          id="compose-textarea" class="form-control" style="height: 300px">
+			
+                </textarea>
+                <!-- INPUT VALIDATION MESSAGE -->
+                <span asp-validation-for="Notes"
+                      style="display:inline" />
+
+            </div>
+            <!-- NOTES INPUT END -->
+        </div>
+        <!--CARD BODY END-->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer">
+            <!-- ADD BUTTONS HERE -->
+            <a asp-action="@nameof(IAdmissionController.Referral)"
+                    type="submit"
+                    class="btn btn-outline-secondary">
+                Cancel
+            </a>
+            <button asp-action="@nameof(IAdmissionController.Admit)"
+                    type="submit"
+                    class="btn btn-outline-primary float-right">
+                Admit
+            </button>
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- 6 COLUMN CARD END -->

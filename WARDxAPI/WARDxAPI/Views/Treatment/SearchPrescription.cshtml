@@ -1,0 +1,54 @@
+﻿<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="HTMLSections/Sidebar/_sidebarTreatmentMenuPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/SearchPrescriptionHeaderPartial" />
+
+<!-- PAGE CONTENT-->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <form asp-controller=""
+                  asp-action=""
+                  class="col-md-6">
+                <div class="card card-lightblue">
+
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Prescriptions</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Cards/Treatment Cards/ViewPrescription" />
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-secondary">
+                            Cancel
+                        </button>
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-primary float-right">
+                            View Prescription
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

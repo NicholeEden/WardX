@@ -1,0 +1,8 @@
+
+CREATE OR ALTER PROCEDURE sp_GetMedicalHistoryAll
+AS
+BEGIN 
+SET NOCOUNT ON
+    SELECT *
+    FROM MedicalHistory
+END

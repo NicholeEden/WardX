@@ -1,0 +1,128 @@
+﻿@model DispenseModel
+<!--SIDEBAR NAV BAR-->
+@section TreatmentMenu{
+    <li class="nav-item has-treeview men menu-open">
+        <!-- OPTION HEADER START -->
+        <a href="#" class="nav-link active">
+            <i class="fas fa-user-md"></i>
+            <p>
+                PATIENT TREATMENT
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <!-- OPTION HEADER END -->
+        <!-- LEVEL 1 CONTAINER START -->
+        <ul class="nav nav-treeview">
+            <!-- LEVEL 1 & 2 CONTAINER START -->
+            <li class="nav-item has-treeview menu-open">
+
+                <!-- LEVEL 1 OPTION START -->
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-pills"></i>
+                    <p>
+                        Dispense Medication
+                    </p>
+                </a>
+                <!-- LEVEL 1 OPTION END -->
+            </li>
+            <!-- LEVEL 1 & 2 CONTAINER END -->
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RecordVitalsNavPartial" />
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RequestDoctorNavPartial" />
+        </ul>
+        <!-- LEVEL 1 CONTAINER END -->
+    </li> 
+}
+<!--PAGE HEADER-->
+<partial name="Header/DispenseHeaderPartial" />
+<!--PAGE CONTENT-->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+            <div>
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" />
+            </div>
+
+            <div class="row">
+
+            <form asp-controller="Treatment"
+                  asp-action="@nameof(ITreatmentController.Dispense)"
+                  class="cols-md-6">
+
+                   <div class="card card-lightblue">
+
+                         CARD HEADER START 
+                        <div class="card-header">
+                            <h3 class="card-title">Patient Info</h3>
+                        </div>
+                         CARD TOOLS START 
+                        <div class="card-tools">
+                             ADD CARD TOOLS HERE 
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>
+                         CARD TOOLS END 
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    @*<partial name="Cards/Treatment Cards/DispensePatientPartial" model="Model.Dispense" />*@
+                    <!-- CARD BODY END -->
+               
+
+                <!--<div class="card card-lightblue">
+
+                    <!-- CARD HEADER START -->
+                    <!--<div class="card-header">
+                        <h3 class="card-title">Doctor Info</h3>-->
+                        <!-- CARD TOOLS START -->
+                        <!--<div class="card-tools">-->
+                            <!-- ADD CARD TOOLS HERE -->
+                            <!--<partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>-->
+                        <!-- CARD TOOLS END -->
+                    <!--</div>-->
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->-->
+                    <!--@*<partial name="Cards/Treatment Cards/DispenseDoctorPartial" />*@-->
+                    <!-- CARD BODY END -->
+                <!--</div>-->
+
+                <div class="card card-lightblue">
+
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Prescription</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+                            <partial name="HTMLSections/Card/_collapsePartial" />
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Cards/Treatment Cards/DispensePrescriptionPartial" />
+                    <!-- CARD BODY END -->
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer">
+                        <!-- ADD BUTTONS HERE -->
+                        <button asp-action=""
+                                type="submit"
+                                class="btn btn-outline-secondary">
+                            Cancel
+                        </button>
+                        <button asp-action="@nameof(ITreatmentController.Dispense)"
+                                type="submit"
+                                class="btn btn-outline-primary float-right">
+                            Dispense Medication
+                        </button>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!-- CONTENT CONTAINER END -->

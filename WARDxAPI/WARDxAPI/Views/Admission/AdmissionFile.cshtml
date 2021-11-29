@@ -1,0 +1,43 @@
+﻿@model PatientAdmissionFileModel
+<!-- SIDEBAR NAV SECTION -->
+@section AdmissionMenu{
+    <partial name="SidebarNav/AdmissionFilePartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/admissionFilePartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <partial name="Card/AdmissionFile/viewFileTablePartial" model="Model.ViewAdmissionFileModel.CardTableContents" />
+        </div>
+    </div>
+    <!-- 12 COLUMN ROW END -->
+    <!-- 12 COLUMN ROW START -->
+    <div class="row justify-content-center">
+        <!-- ADD CARD HERE -->
+
+    </div>
+    <!-- 12 COLUMN ROW END -->
+
+</div>
+<!-- CONTENT CONTAINER END -->
+
+@section Scripts{
+    <script>
+        $(function () {
+            $("#dtTable").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#dtTable_wrapper .col-md-6:eq(0)');
+        })
+
+        $('#example').tooltip(options)
+    </script>
+}

@@ -1,0 +1,52 @@
+﻿@model MoveCheckOut
+
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box ">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-vials"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">Blood Tests</span>
+			<span class="info-box-number">@Model.BloodTestsCounter</span>
+		</div>
+	</div>
+</div>
+<!-- 3 COLUMN INFO BOX END -->
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-procedures"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">Surgery</span>
+			<span class="info-box-number">@Model.SurgeryCounter</span>
+		</div>
+	</div>
+</div>
+<!-- 3 COLUMN INFO BOX END -->
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-x-ray"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">XRays</span>
+			<span class="info-box-number">@Model.XRaysCounter</span>
+		</div>
+	</div>
+</div>
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-joint"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">Smoke Break</span>
+			<span class="info-box-number">@Model.SmokeBreakCounter</span>
+		</div>
+	</div>
+</div>

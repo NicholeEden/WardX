@@ -1,0 +1,273 @@
+﻿@model PatientInfo
+
+<div class="col-md-9">
+    <div class="card">
+        <!-- TAB HEADER AREA START -->
+        <div class="card-header p-2">
+            <ul class="nav nav-pills">
+                <!-- CONTACT TAB HEADER -->
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="#contact"
+                       data-toggle="tab">
+                        Contact Patient
+                    </a>
+                </li>
+                <!-- PATIENT INFO TAB HEADER -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#information"
+                       data-toggle="tab">
+                        Patient Details
+                    </a>
+                </li>
+                <!-- KIN INFO TAB HEADER -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#kin"
+                       data-toggle="tab">
+                        Next of Kin
+                    </a>
+                </li>
+                <!-- MED AID INFO TAB HEADER -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#aid"
+                       data-toggle="tab">
+                        Medical Aid Details
+                    </a>
+                </li>
+                @if (Model.Diagnosis != null)
+                {
+                    <!-- DIAGNOSIS INFO TAB HEADER -->
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="#diagnosis"
+                           data-toggle="tab">
+                            Diagnosis Details
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!-- TAB HEADER AREA END -->
+        <div class="card-body"
+             id="card-buttons">
+            <!-- TAB CONTENT AREA START -->
+            <div class="tab-content">
+                <!-- CONTACT TAB CONTENT START -->
+                <div class="active tab-pane"
+                     id="contact">
+                    <!-- CONTENT HERE -->
+                    <div class="post">
+                        <form asp-controller="Profile"
+                              method="post">
+                            <!-- FROM EMAIL INPUT START-->
+                            <div class="form-group">
+
+                                <!-- INPUT LABEL -->
+                                <label>TO: </label>
+
+                                <!-- INPUT ITEM -->
+                                <input class="form-control"
+                                       placeholder="@Model.Patient.EmailAddress"
+                                       disabled="disabled">
+                            </div>
+                            <!-- FROM EMAIL INPUT END-->
+                            <!-- HEADER INPUT START-->
+                            <div class="form-group">
+
+                                <!-- INPUT LABEL -->
+                                <label asp-for="EmailHeader"></label>
+
+                                <!-- INPUT ITEM -->
+                                <input asp-for="EmailHeader"
+                                       class="form-control"
+                                       placeholder="Add email header">
+
+                                <!-- INPUT VALIDATION MESSAGE -->
+                                <span asp-validation-for="EmailHeader" />
+                            </div>
+                            <!-- HEADER INPUT END-->
+                            <!-- DETAIL INPUT START -->
+                            <div class="form-group">
+
+                                <!-- INPUT LABEL -->
+                                <label asp-for="EmailBody"></label>
+
+                                <!-- INPUT ITEM -->
+                                <textarea asp-for="EmailBody"
+                                          class="form-control"
+                                          rows="5"
+                                          placeholder="Add email content"></textarea>
+
+                                <!-- INPUT VALIDATION MESSAGE -->
+                                <span asp-validation-for="EmailBody" />
+                            </div>
+                            <!-- DETAIL INPUT END -->
+                            <input asp-for="ReturnID" hidden />
+                            <input asp-for="EmailAddress" hidden />
+                            <!-- BUTTON START -->
+                            <button asp-action="SendEmail"
+                                    type="submit"
+                                    class="btn btn-outline-primary mt-3 col-md-12">
+                                Send
+                            </button>
+                            <!-- BUTTON END -->
+                        </form>
+                    </div>
+                </div>
+                <!-- CONTACT TAB CONTENT END -->
+                <!-- PATIENT INFORMATION TAB CONTENT START -->
+                <div class="tab-pane"
+                     id="information">
+                    <!-- CONTENT HERE -->
+                    <div class="post">
+                        <strong> Full Name</strong>
+                        <p class="text-muted">
+                            @Model.Patient.FirstName @Model.Patient.LastName
+                        </p>
+                        <hr>
+                        <strong> ID Number</strong>
+                        <p class="text-muted">
+                            @Model.Patient.IDNumber
+                        </p>
+                        <hr>
+                        <strong> Gender</strong>
+                        <p class="text-muted">
+                            @Model.Patient.Gender
+                        </p>
+                        <hr>
+                        <strong> Date of Birth</strong>
+                        <p class="text-muted">
+                            @Model.Patient.DOB.ToShortDateString()
+                        </p>
+                        <hr>
+                        <strong> Mobile Number</strong>
+                        <p class="text-muted">
+                            @Model.Patient.MobileNumber
+                        </p>
+                        <hr>
+                        <strong> Email Address</strong>
+                        <p class="text-muted">
+                            @Model.Patient.EmailAddress
+                        </p>
+                        <hr>
+                        <strong> Residential Address</strong>
+                        <p class="text-muted">
+                            @Model.Patient.AddressLine1 @Model.Patient.AddressLine2
+                            | @Model.PatientSuburb.SuburbName @Model.PatientSuburb.PostalCode
+                        </p>
+                    </div>
+                </div>
+                <!-- PATIENT INFORMATION TAB CONTENT END -->
+                <!-- KIN INFORMATION TAB CONTENT START -->
+                <div class="tab-pane"
+                     id="kin">
+                    <!-- CONTENT HERE -->
+                    <div class="post">
+                        <strong> Full Name</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.FirstName @Model.NextOfKin.LastName
+                        </p>
+                        <hr>
+                        <strong> Gender</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.Gender
+                        </p>
+                        <hr>
+                        <strong> Relationship with patient</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.Relationship
+                        </p>
+                        <hr>
+                        <strong> Mobile Number</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.MobileNumber
+                        </p>
+                        <hr>
+                        <strong> Email Address</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.EmailAddress
+                        </p>
+                        <hr>
+                        <strong> Residential Address</strong>
+                        <p class="text-muted">
+                            @Model.NextOfKin.AddressLine1 @Model.NextOfKin.AddressLine2
+                            | @Model.KinSuburb.SuburbName @Model.KinSuburb.PostalCode
+                        </p>
+                    </div>
+                </div>
+                <!-- KIN INFORMATION TAB CONTENT END -->
+                <!-- MED AID INFORMATION TAB CONTENT START -->
+                <div class="tab-pane"
+                     id="aid">
+                    <!-- CONTENT HERE -->
+                    <div class="post">
+                        <strong> Medical Aid Scheme</strong>
+                        <p class="text-muted">
+                            @Model.MedicalAidScheme.Name
+                        </p>
+                        <hr>
+                        <strong> Medical Aid Plan</strong>
+                        <p class="text-muted">
+                            @Model.MedicalAidPlan.Name
+                        </p>
+                        <hr>
+                        <strong> Principal Member</strong>
+                        <p class="text-muted">
+                            @Model.MedicalAid.PrincipalFirstName @Model.MedicalAid.PrincipalLastName
+                        </p>
+                        <hr>
+                        <strong> Member Number</strong>
+                        <p class="text-muted">
+                            @Model.MedicalAid.MemberNumber
+                        </p>
+                        <hr>
+                        <strong> Dependant Code</strong>
+                        <p class="text-muted">
+                            @Model.MedicalAid.DependantCode
+                        </p>
+                    </div>
+                </div>
+                <!-- MED AID INFORMATION TAB CONTENT END -->
+                @if (Model.Diagnosis != null)
+                {
+                    <!-- DIAGNOSIS INFORMATION TAB CONTENT START -->
+                    <div class="tab-pane"
+                         id="diagnosis">
+                        <!-- CONTENT HERE -->
+                        <div class="post">
+                            <strong> Medical Condition</strong>
+                            <p class="text-muted">
+                                @Model.MedicalCondition.Name
+                            </p>
+                            <hr>
+                            <strong> Known Symptoms</strong>
+                            <p class="text-muted">
+                                @Model.MedicalCondition.Symptom
+                            </p>
+                            <hr>
+                            <strong> Diagnosing Doctor</strong>
+                            <p class="text-muted">
+                                @Model.GPDoctor.FirstName @Model.GPDoctor.LastName | @Model.GPDoctor.PracticeNumber
+                            </p>
+                            <hr>
+                            <strong> Diagnosis Details</strong>
+                            <p class="text-muted">
+                                @Model.Diagnosis.DiagnosisDetals
+                            </p>
+                            <hr>
+                            <strong> Date Performed</strong>
+                            <p class="text-muted">
+                                @Model.Diagnosis.DiagnosisDate.ToShortDateString()
+                            </p>
+                        </div>
+                    </div>
+                    <!-- DIAGNOSIS INFORMATION TAB CONTENT END -->
+                }
+            </div>
+            <!-- TAB CONTENT AREA END -->
+        </div>
+    </div>
+</div>

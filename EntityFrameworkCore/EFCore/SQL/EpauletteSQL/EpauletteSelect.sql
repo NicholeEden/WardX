@@ -1,0 +1,9 @@
+USE HWMS06DB
+GO
+CREATE OR ALTER PROCEDURE sp_SelectEpaulette
+AS
+BEGIN
+SET NOCOUNT ON
+	SELECT EpauletteID, Colour, [Description]
+	FROM Epaulette
+END

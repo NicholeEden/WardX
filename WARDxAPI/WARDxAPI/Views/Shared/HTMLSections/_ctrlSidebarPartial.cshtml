@@ -1,0 +1,11 @@
+﻿<!-- Requires a list of 'ControlSidebarModel' models -->
+@model List<IControlSidebarModel>
+
+@foreach (var item in Model)
+{
+    <!-- Each 'ControlSidebarModel' will be displayed in a content section -->
+    <div class="p-3">
+        <h5>@item.Header</h5>
+        <p>@item.Content</p>
+    </div>
+}

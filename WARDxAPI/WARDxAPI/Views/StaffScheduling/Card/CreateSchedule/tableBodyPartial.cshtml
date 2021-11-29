@@ -1,0 +1,69 @@
+﻿@model CreateSchedule
+<div class="card-body">
+    <!-- ADD CONTENT HERE -->
+    <!-- INPUT LABEL -->
+    <!-- INPUT START-->
+    <!-- INPUT ITEM -->
+    <div class="form-group">
+
+        <!-- INPUT LABEL -->
+        <label asp-for="NurseID"></label>
+
+        <!-- INPUT ITEM -->
+        <select asp-for="NurseID"
+                asp-items="@(new SelectList(Model.NurseIDList, "Key", "Value"))"
+                class="selectpicker"
+                data-width="100%"
+                data-live-search="true"
+                title="Search and Select a Nurse">
+        </select>
+
+        <!-- INPUT VALIDATION MESSAGE -->
+        <span asp-validation-for="NurseID"
+              style="display:inline" />
+    </div>
+
+    <!-- DATE RANGE INPUT START -->
+    <div class="form-group">
+
+        <!-- LABEL -->
+        <label asp-for="MonthID"></label>
+
+
+
+        <!-- INPUT ITEM -->
+        <select asp-for="MonthID"
+                asp-items="@(new SelectList(Model.MonthOptions, "Key", "Value"))"
+                class="selectpicker"
+                data-width="100%"
+                data-live-search="true"
+                title="Choose a month">
+        </select>
+    </div>
+
+
+    <!-- INPUT ITEM -->
+    <div class="form-group">
+
+        <!-- INPUT LABEL -->
+        <label asp-for="ShiftSlotID"></label>
+
+        <!-- INPUT ITEM -->
+        <select asp-for="ShiftSlotID"
+                asp-items="@(new SelectList(Model.ShiftSlotOptions, "Key", "Value"))"
+                class="selectpicker"
+                data-width="100%"
+                data-live-search="true"
+                title="Select a shift">
+        </select>
+
+        <!-- INPUT VALIDATION MESSAGE -->
+        <span asp-validation-for="ShiftSlotID"
+              style="display:inline" />
+    </div>
+
+    <!-- INPUT END-->
+
+
+
+</div>

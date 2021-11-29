@@ -1,0 +1,425 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>TechBuzz</Authors>
+    <Product>Entity Framework Core</Product>
+    <Description>Entity Framework Library by TeckBuzz to be used system wide for testing</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210128124012_HWMS06Initial.cs" />
+    <Compile Remove="Migrations\20210128124012_HWMS06Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210128124318_HWMS06Initial.cs" />
+    <Compile Remove="Migrations\20210128124318_HWMS06Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210128145019_PatientMoveSeed.cs" />
+    <Compile Remove="Migrations\20210128145019_PatientMoveSeed.Designer.cs" />
+    <Compile Remove="Migrations\20210128145612_AdmissionFileBedSeedUpdate.cs" />
+    <Compile Remove="Migrations\20210128145612_AdmissionFileBedSeedUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20210128154705_NurseUpdates.cs" />
+    <Compile Remove="Migrations\20210128154705_NurseUpdates.Designer.cs" />
+    <Compile Remove="Migrations\20210128182447_NurseUpdates.cs" />
+    <Compile Remove="Migrations\20210128182447_NurseUpdates.Designer.cs" />
+    <Compile Remove="Migrations\20210128182813_NurseUpdates.cs" />
+    <Compile Remove="Migrations\20210128182813_NurseUpdates.Designer.cs" />
+    <Compile Remove="Migrations\20210130175738_Referral.cs" />
+    <Compile Remove="Migrations\20210130175738_Referral.Designer.cs" />
+    <Compile Remove="Migrations\20210130180306_Referral.cs" />
+    <Compile Remove="Migrations\20210130180306_Referral.Designer.cs" />
+    <Compile Remove="Migrations\20210130181413_Referral.cs" />
+    <Compile Remove="Migrations\20210130181413_Referral.Designer.cs" />
+    <Compile Remove="Migrations\20210201060327_HWMS06Final.cs" />
+    <Compile Remove="Migrations\20210201060327_HWMS06Final.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileAll.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileByDoctor.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileByID.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileByPatient.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileByPrescription.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileDischarge.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileInsert.sql" />
+    <None Remove="SQL\AdmissionFileSQL\AdmissionFileUpdateByPatient.sql" />
+    <None Remove="SQL\AuthSQL\RoleSelectByRoleName.sql" />
+    <None Remove="SQL\AuthSQL\RoleSelectByUserID.sql" />
+    <None Remove="SQL\AuthSQL\UserSelectInRoleName.sql" />
+    <None Remove="SQL\BedSQL\BedSelectAll.sql" />
+    <None Remove="SQL\BedSQL\BedSelectAllByAvailability.sql" />
+    <None Remove="SQL\BedSQL\BedStatusUpdate.sql" />
+    <None Remove="SQL\BloodGroupSQL\BloodGroupAll.sql" />
+    <None Remove="SQL\ClockingSQL\ClockingAll.sql" />
+    <None Remove="SQL\ClockingSQL\ClockingByNurseID.sql" />
+    <None Remove="SQL\ClockingSQL\ClockingInsert.sql" />
+    <None Remove="SQL\ClockingSQL\ClockingUpdate.sql" />
+    <None Remove="SQL\DiagnosisSQL\DiagnosisInsert.sql" />
+    <None Remove="SQL\DiagnosisSQL\DiagnosisSelect.sql" />
+    <None Remove="SQL\DoctorSQL\DoctorSelectGP.sql" />
+    <None Remove="SQL\DoctorSQL\DoctorSelectSpecialist.sql" />
+    <None Remove="SQL\DoctorTypeSQL\DoctorTypeSelect.sql" />
+    <None Remove="SQL\MedicalAidPlanSQL\MedicalAidPlanSelect.sql" />
+    <None Remove="SQL\MedicalAidSchemeSQL\MedicalAidSchemeSelect.sql" />
+    <None Remove="SQL\MedicalAidSQL\MedicalAidInsert.sql" />
+    <None Remove="SQL\MedicalAidSQL\MedicalAidSelect.sql" />
+    <None Remove="SQL\MedicalConditionSQL\MedicalConditionSelect.sql" />
+    <None Remove="SQL\MedicationSQL\MedicationSelect.sql" />
+    <None Remove="SQL\MonthSQL\MonthAll.sql" />
+    <None Remove="SQL\MonthSQL\MonthSelect.sql" />
+    <None Remove="SQL\NextOfKinSQL\NextofKinInsert.sql" />
+    <None Remove="SQL\NextOfKinSQL\NextofKinSelect.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleAll.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleByID.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleByNurse.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleByShiftSlot.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleByShiftSlotID.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleInsert.sql" />
+    <None Remove="SQL\NurseScheduleSQL\NurseScheduleUpdate.sql" />
+    <None Remove="SQL\NurseSQL\NurseByEpaulette.sql" />
+    <None Remove="SQL\NurseSQL\NurseByID.sql" />
+    <None Remove="SQL\NurseSQL\NurseBySpecialization.sql" />
+    <None Remove="SQL\NurseSQL\NurseByType.sql" />
+    <None Remove="SQL\NurseSQL\NurseInsert.sql" />
+    <None Remove="SQL\NurseSQL\NurseSelectAll.sql" />
+    <None Remove="SQL\PatientMovement\PatientMoveByDateRange.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementAll.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementByID.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementByReason.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementByStatus.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementCheckInStatus.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementInsert.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementNotification.sql" />
+    <None Remove="SQL\PatientMovement\PatientMovementUpdate.sql" />
+    <None Remove="SQL\PatientSelect.sql" />
+    <None Remove="SQL\PatientSQL\PatientInsert.sql" />
+    <None Remove="SQL\PatientSQL\PatientSelectByID.sql" />
+    <None Remove="SQL\PatientSQL\PatientSelectByName.sql" />
+    <None Remove="SQL\PatientSQL\PatientSelectNoReferral.sql" />
+    <None Remove="SQL\PatientSQL\PatientSelectTimelineRef.sql" />
+    <None Remove="SQL\PatientSQL\PatientSelectTimelineTreat.sql" />
+    <None Remove="SQL\PatientSQL\PatientUpdate.sql" />
+    <None Remove="SQL\AuthSQL\RoleSelectByID.sql" />
+    <None Remove="SQL\AuthSQL\UserSelectByID.sql" />
+    <None Remove="SQL\AuthSQL\UserSelectByUserName.sql" />
+    <None Remove="SQL\PrescriptionSQL\PrecriptionByPatient.sql" />
+    <None Remove="SQL\PrescriptionSQL\PrescriptionAll.sql" />
+    <None Remove="SQL\PrescriptionSQL\PrescriptionByAdmissionFile.sql" />
+    <None Remove="SQL\PrescriptionSQL\PrescriptionInsert.sql" />
+    <None Remove="SQL\ReferralSQL\ReferralInsert.sql" />
+    <None Remove="SQL\ReferralSQL\ReferralSelect.sql" />
+    <None Remove="SQL\ReferralSQL\ReferralSelectAll.sql" />
+    <None Remove="SQL\ReferralSQL\ReferralSelectPending.sql" />
+    <None Remove="SQL\ReferralSQL\ReferralUpdateStatus.sql" />
+    <None Remove="SQL\ShiftSlotSQL\ShiftSlotAll.sql" />
+    <None Remove="SQL\SpecializationSQL\SpecializationSelect.sql" />
+    <None Remove="SQL\StaffMemberSQL\StaffMemberByID.sql" />
+    <None Remove="SQL\StaffMemberSQL\StaffMemberBySuburb.sql" />
+    <None Remove="SQL\StaffMemberSQL\StaffMemberByUser.sql" />
+    <None Remove="SQL\StaffMemberSQL\StaffMemberInsert.sql" />
+    <None Remove="SQL\StaffMemberSQL\StaffMemberSELECTAll.sql" />
+    <None Remove="SQL\SuburbSQL\SuburbSelect.sql" />
+    <None Remove="SQL\TreatmentSQL\TreatmentInsert.sql" />
+    <None Remove="SQL\TreatmentSQL\TreatmentSelect.sql" />
+    <None Remove="SQL\TreatmentTypeSQL\TreatmentTypeSelect.sql" />
+    <None Remove="SQL\UserRoleSQL\UserRoleInsert.sql" />
+    <None Remove="SQL\VitalSignSQL\VitalSignByID.sql" />
+    <None Remove="SQL\VitalSignSQL\VitalSignInsert.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SQL\MonthSQL\MonthSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileByDoctor.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileByPatient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileByPrescription.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileDischarge.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AdmissionFileSQL\AdmissionFileUpdateByPatient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\RoleSelectByRoleName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\RoleSelectByUserID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\UserSelectInRoleName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\BedSQL\BedSelectAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\BedSQL\BedSelectAllByAvailability.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\BedSQL\BedStatusUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\BloodGroupSQL\BloodGroupAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ClockingSQL\ClockingAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ClockingSQL\ClockingByNurseID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ClockingSQL\ClockingUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ClockingSQL\ClockingInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\DiagnosisSQL\DiagnosisInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\DiagnosisSQL\DiagnosisSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\DoctorSQL\DoctorSelectGP.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\DoctorSQL\DoctorSelectSpecialist.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\DoctorTypeSQL\DoctorTypeSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicalAidPlanSQL\MedicalAidPlanSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicalAidSchemeSQL\MedicalAidSchemeSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicalAidSQL\MedicalAidInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicalAidSQL\MedicalAidSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicalConditionSQL\MedicalConditionSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MedicationSQL\MedicationSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\MonthSQL\MonthAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NextOfKinSQL\NextofKinInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NextOfKinSQL\NextofKinSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleByShiftSlotID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleByShiftSlot.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleByNurse.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseScheduleSQL\NurseScheduleUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseByEpaulette.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseBySpecialization.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseByType.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\NurseSQL\NurseSelectAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMoveByDateRange.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementByReason.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementByStatus.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementCheckInStatus.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementNotification.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientMovement\PatientMovementUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelectTimelineTreat.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelectTimelineRef.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelectNoReferral.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelectByName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientSelectByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PatientSQL\PatientUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\UserSelectByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\RoleSelectByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\AuthSQL\UserSelectByUserName.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PrescriptionSQL\PrecriptionByPatient.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PrescriptionSQL\PrescriptionAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PrescriptionSQL\PrescriptionByAdmissionFile.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\PrescriptionSQL\PrescriptionInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ReferralSQL\ReferralInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ReferralSQL\ReferralSelectPending.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ReferralSQL\ReferralSelectAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ReferralSQL\ReferralSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ReferralSQL\ReferralUpdateStatus.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\ShiftSlotSQL\ShiftSlotAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\SpecializationSQL\SpecializationSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\StaffMemberSQL\StaffMemberByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\StaffMemberSQL\StaffMemberBySuburb.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\StaffMemberSQL\StaffMemberByUser.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\StaffMemberSQL\StaffMemberInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\StaffMemberSQL\StaffMemberSELECTAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\SuburbSQL\SuburbSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\TreatmentSQL\TreatmentInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\TreatmentSQL\TreatmentSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\TreatmentTypeSQL\TreatmentTypeSelect.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\UserRoleSQL\UserRoleInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\VitalSignSQL\VitalSignByID.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQL\VitalSignSQL\VitalSignInsert.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SQL\RoleSQL\" />
+    <Folder Include="SQL\NurseInspectionSQL\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFCore.Domain\EFCore.Domain.csproj" />
+    <ProjectReference Include="..\EFCore.ExtensionMethod\EFCore.ExtensionMethod.csproj" />
+    <ProjectReference Include="..\EFCore.Interface\EFCore.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

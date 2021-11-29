@@ -1,0 +1,103 @@
+﻿@model RequestDoctor
+<!--SIDEBAR NAV BAR-->
+@section treatmentMenu{
+    <li class="nav-item has-treeview men menu-open">
+        <!-- OPTION HEADER START -->
+        <a href="#" class="nav-link active">
+            <i class="fas fa-user-md"></i>
+            <p>
+                PATIENT TREATMENT
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <!-- OPTION HEADER END -->
+        <!-- LEVEL 1 CONTAINER START -->
+        <ul class="nav nav-treeview">
+            <partial name="HTMLSections/Sidebar/TreatmentMenu/RecordVitalsNavPartial" />
+            <!-- LEVEL 1 OPTION START -->
+            <li class="nav-item">
+                <a asp-controller="Treatment"
+                   asp-action="@nameof(ITreatmentController.RequestDoctor)"
+                   class="nav-link active">
+                    <i class=" nav-icon fas fa-envelope"></i>
+                    <p>Request Doctor</p>
+                </a>
+            </li>
+            <!-- LEVEL 1 OPTION END -->
+        </ul>
+        <!-- LEVEL 1 CONTAINER END -->
+    </li>
+}
+
+<!--PAGE HEADER-->
+<partial name="Header/RequestDoctorHeaderPartial" />
+
+<!--PAGE CONTENT-->
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-10">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.alertModel" />
+            </div>
+
+            <form asp-controller="Treatment"
+                  class="col-md-6">
+
+                <div class="card">
+                    <!-- CARD HEADER START -->
+                    <div class="card-header">
+                        <h3 class="card-title">Request Doctor</h3>
+                        <!-- CARD TOOLS START -->
+                        <div class="card-tools">
+                            <!-- ADD CARD TOOLS HERE -->
+
+                        </div>
+                        <!-- CARD TOOLS END -->
+                    </div>
+                    <!-- CARD HEADER END -->
+                    <!-- CARD BODY START -->
+                    <partial name="Cards/Treatment Cards/RequestDoctor" model="Model.SendRequest" />
+
+                    <!-- CARD FOOTER START -->
+                    <div class="card-footer"
+                         id="card-buttons">
+                        <!-- ADD BUTTONS HERE -->
+                        <div class="card-footer text-center">
+                            <button asp-action="RequestDoctor">
+                                <i class="far fa-envelope"></i>
+                                Send Email
+                            </button>
+                        </div>
+                    </div>
+                    <!-- CARD FOOTER END -->
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+@section Scripts{ 
+    <script>
+        // submit loading state
+        $(function () {
+            // select submit event on form
+            $('form').submit('submit', function () {
+                // check form validity
+                if ($(this).valid()) {
+                    // create loading overlay
+                    var overlay = $('<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>');
+                    // select card footer
+                    var card = $('#card-buttons');
+                    // add overlay after footer
+                    $(card).after(overlay);
+                }
+            });
+        });
+
+    </script>
+} 

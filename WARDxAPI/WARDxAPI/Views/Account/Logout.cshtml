@@ -1,0 +1,32 @@
+﻿<!-- LOGIN CARD START -->
+<div class="card">
+    <div class="card-body login-card-body">
+        <!-- HEADER START -->
+        <p class="login-box-msg">Sign out to end your session</p>
+        <!-- HEADER END -->
+        <form asp-controller="Account"
+              asp-action="@nameof(IAccountController.Logout)"
+              method="post">
+
+            <input type="hidden" name="userName" value="@User.Identity.Name" />
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-danger btn-block">Sign Out</button>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <form asp-controller="Account"
+              asp-action="@nameof(IAccountController.Logout)"
+              method="post">
+            <input type="hidden" name="returnUrl" value="@Context.Request.Query["returnUrl"].SingleOrDefault()" />
+            <div class="row">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-outline-secondary btn-block">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.login-card-body -->
+</div>
+<!-- LOGIN CARD END -->

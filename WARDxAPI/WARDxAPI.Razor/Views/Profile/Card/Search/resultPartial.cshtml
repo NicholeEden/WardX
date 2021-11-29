@@ -1,0 +1,59 @@
+﻿@model List<IProfileSearchResult>
+
+<!-- RESULT LIST CONTAINER START -->
+<div class="col-md-10">
+        <div class="list-group">
+            @foreach (var result in Model)
+            {
+                <!-- RESULT LIST ITEM START -->
+                <div class="list-group-item my-1">
+                    <div class="row">
+                        <div class="col px-4">
+                            <div>
+                                <!-- PERSONAL INFO -->
+                                <div class="float-right text-muted">
+                                    @result.Patient.AddressLine1 | @result.Suburb.SuburbName
+                                </div>
+                                <h3>@result.Patient.FirstName @result.Patient.LastName</h3>
+                                <div class="row  align-items-end">
+                                    <!-- PERSONAL INFO -->
+                                    <div class="col-6">
+                                        <p class="mb-0">
+                                            @result.Patient.DOB.ToShortDateString()
+                                            <code class="text-muted">
+                                                (Date of birth)
+                                            </code>
+                                            <br />
+                                            @result.NextOfKin.FirstName @result.NextOfKin.LastName
+                                            <code class="text-muted">
+                                                (@result.NextOfKin.Relationship)
+                                            </code>
+                                            <br />
+                                            @result.MedicalAid.MemberNumber
+                                            <code class="text-muted">
+                                                (Medical aid member number)
+                                            </code>
+                                            <br />
+                                        </p>
+                                    </div>
+                                    <!-- ACTION BUTTONS START -->
+                                    <div class="col-6">
+                                        <!-- PROFILE DETAILS -->
+                                        <a asp-action="@nameof(IProfileController.Details)"
+                                           asp-route-id="@result.Patient.PatientID"
+                                           class="btn btn-app float-right">
+                                            <span class="badge bg-info"></span>
+                                            <i class="fas fa-user"></i> View Details
+                                        </a>
+                                    </div>
+                                    <!-- ACTION BUTTONS END -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RESULT LIST ITEM END -->
+            }
+        </div>
+    </div>
+<!-- RESULT LIST CONTAINER END -->

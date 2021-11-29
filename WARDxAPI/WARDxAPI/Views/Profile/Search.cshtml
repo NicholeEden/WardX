@@ -1,0 +1,60 @@
+﻿@model IProfileSearchModel
+<!-- Uses ASP NET Identity -->
+@{ var user = _userManager.FindByNameAsync(User.Identity.Name); }
+<!-- SIDEBAR NAV SECTION -->
+@section profileMenu{
+    <partial name="SidebarNav/searchPartial" />
+}
+
+<!-- PAGE HEADER -->
+<partial name="Header/searchPartial" />
+
+<!-- CONTENT CONTAINER START -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-10">
+                <form asp-controller="Profile"
+                      asp-action="@nameof(IProfileController.Search)">
+                    <div class="input-group input-group-lg">
+                        <input asp-for="Keyword"
+                               type="search"
+                               class="form-control form-control-lg"
+                               placeholder="Type first or last name here">
+                        <div class="input-group-append">
+                            <button type="submit"
+                                    class="btn btn-lg btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- 12 COLUMN ROW END -->
+        <!-- 12 COLUMN ROW START -->
+        <div class="row justify-content-center my-3">
+            <!-- ADD CARD HERE -->
+            <div class="col-md-10">
+                <partial name="HTMLSections/Alert/_dynamicPartial" model="Model.Alert" />
+            </div>
+            @if (Model.SearchResults != null)
+                @switch (user.Result.RoleID)
+                {
+                    case WARDxRoles.Receptionist:
+                        <partial name="Card/Search/resultPartial-rec" model="Model.SearchResults" />
+                        break;
+                    case WARDxRoles.General_Practitioner:
+                        <partial name="Card/Search/resultPartial-gp" model="Model.SearchResults" />
+                        break;
+                    default:
+                        <partial name="Card/Search/resultPartial" model="Model.SearchResults" />
+                        break;
+                }
+        </div>
+        <!-- 12 COLUMN ROW END -->
+    </div>
+</div>
+<!-- CONTENT CONTAINER END -->

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BusinessLogic" Version="1.1.141" />
+    <PackageReference Include="BusinessLogic.Security" Version="1.1.141" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="WARDx.Data" Version="1.0.8" />
+    <PackageReference Include="WARDx.DataAcess" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WARDxAPI.Interface\WARDxAPI.Interface.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model.Interface\WARDxAPI.Model.Interface.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model.Shared\WARDxAPI.Model.Shared.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Model\WARDxAPI.Model.csproj" />
+    <ProjectReference Include="..\WARDxAPI.Razor\WARDxAPI.Razor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\help\patientmove\" />
+  </ItemGroup>
+
+</Project>

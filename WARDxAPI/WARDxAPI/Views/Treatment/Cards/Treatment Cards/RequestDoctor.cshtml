@@ -1,0 +1,49 @@
+﻿@model SendRequest
+<div class="card-body">
+    <!-- ADD CONTENT HERE -->
+
+    <div class="form-group">
+        <!-- SELECT DOCTOR EMAIL INPUT START -->
+        <!-- INPUT SEARCH LABEL -->
+        <label asp-for="ToEmail"> To: </label>
+        <div>
+            <!-- INPUT ITEM -->
+            <select asp-for="ToEmail"
+                    class="selectpicker"
+                    data-width="100%"
+                    data-live-search="true"
+                    title="Select Email Address">
+                <partial name="HTMLSections/Card/Body/_selectOptionPartial2" model="Model.DoctorEmailList" />
+            </select>
+        </div>
+
+        <!-- INPUT VALIDATION MESSAGE -->
+        <span asp-validation-for="ToEmail" style="display:inline" />
+
+    </div>
+
+    <div class="form-group">
+        <!-- INPUT ITEM -->
+        <label asp-for="Subject">Subject:</label>
+
+        <input asp-for="Subject"
+               class="form-control"
+               placeholder="Enter email subject">
+
+        <!-- INPUT VALIDATION MESSAGE -->
+        <span asp-validation-for="Subject" style="display:inline" text />
+
+    </div>
+
+    <div class="form-group">
+        <!--ENTER MESSAGE-->
+
+        <label as-for="Body">Compose email:</label>
+
+        <textarea asp-for="Body" class="form-control" style="height: 300px"></textarea>
+        <!--INPUT VALIDATION MESSAGE-->
+        <span asp-validation-for="Body" style="display:inline" />
+
+
+    </div>
+</div>

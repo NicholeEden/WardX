@@ -1,0 +1,98 @@
+﻿<!--testing pipeline change-->
+<!-- 12 COLUMN CARD START -->
+<form asp-controller=""
+      asp-action=""
+      class="col-md-12">
+    <div class="card card-lightblue">
+        <!-- CARD HEADER START -->
+        <div class="card-header">
+            <h3 class="card-title">Admission File</h3>
+            <!-- CARD TOOLS START -->
+            <div class="card-tools">
+                <!-- ADD CARD TOOLS HERE -->
+                <!-- This will cause the card to maximize when clicked -->
+                <partial name="HTMLSections/Card/_maximizePartial" />
+                <!-- This will cause the card to minimize when clicked -->
+                <partial name="HTMLSections/Card/_collapsePartial" />
+            </div>
+            <!-- CARD TOOLS END -->
+        </div>
+        <!-- CARD HEADER END -->
+        <!-- CARD BODY START -->
+        <div class="card-body table-responsive px-1" style="height: 400px;">
+            <!-- ADD CONTENT HERE -->
+            <!-- TABLE START -->
+            <table id="dtTable" class="table table-head-fixed table-hover text-nowrap table-bordered">
+                <!-- TABLE HEADER START -->
+                <thead>
+                    <!-- ADD COLUMN HEADERS HERE -->
+                    <tr>
+                        <!-- 1st HEADER IS FOR BUTTONS -->
+                        <th></th>
+                        <th></th>
+                        <th>FileNo</th>
+                        <th>Patient</th>
+                        <th>AdmissionDate</th>
+                        <th>Specialist</th>
+                        <th>Bed</th>
+                        <th>DischargeDate</th>
+                        <th>Prescription</th>
+                        <th>Notes</th>
+
+                    </tr>
+                </thead>
+                <!-- TABLE HEADER END -->
+                <!-- ADD TABLE CONTENT HERE -->
+                @model IList<ICardTableContent>
+
+                @if (Model is null)
+                {
+                    // no content to display
+                }
+                else
+                {
+                    <!-- TABLE BODY CONTENT START -->
+                    <tbody>
+                        <!-- ROW CONTENT HERE -->
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                               <td>
+                                  <a asp-route-id="@item.Key"
+                                        asp-action="@nameof(IAdmissionController.EditAdmissionFile)"
+                                        class="btn btn-outline-primary btn-sm">
+                                    Edit
+                                  </a>
+                               </td>
+                               <td>
+                                  <a asp-route-id="@item.Key"
+                                        asp-action="@nameof(IAdmissionController.Discharge)"
+                                        class="btn btn-outline-primary btn-sm">
+                                    Discharge
+                                  </a>
+                               </td>
+                               <td>@item.Value1</td>
+                               <td>@item.Value2</td>
+                               <td>@item.Value3</td>
+                               <td>@item.Value4</td>
+                               <td>@item.Value5</td>
+                               <td>@item.Value6</td>
+                               <td>@item.Value7</td>
+                               <td>@item.Value8</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <!-- TABLE BODY CONTENT END -->
+                }
+            </table>
+            <!-- TABLE END -->
+        </div>
+        <!-- CARD BODY END -->
+        <!-- CARD FOOTER START -->
+        <div class="card-footer">
+            <!-- ADD BUTTONS HERE -->
+        </div>
+        <!-- CARD FOOTER END -->
+    </div>
+</form>
+<!-- 12 COLUMN CARD END -->

@@ -1,0 +1,9 @@
+﻿
+CREATE OR ALTER PROCEDURE sp_GetProcedureHistory
+AS
+SET NOCOUNT ON
+BEGIN
+    SELECT *
+    FROM ProcedureHistory
+END
+GO

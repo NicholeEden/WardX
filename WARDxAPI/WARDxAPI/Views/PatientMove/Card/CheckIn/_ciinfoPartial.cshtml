@@ -1,0 +1,29 @@
+﻿@model MoveCheckIn
+<!-- 3 COLUMN INFO BOX START -->
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-users"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">Patients Checked Out</span>
+			<span class="info-box-number">@Model.CheckedOutCounter</span>
+		</div>
+	</div>
+</div>
+<!-- 3 COLUMN INFO BOX END -->
+<!-- 3 COLUMN INFO BOX START -->
+<div class="col-lg-3 col-6">
+	<!-- small card -->
+	<div class="info-box">
+		<span class="info-box-icon bg-lightblue">
+			<i class="fas fa-users"></i>
+		</span>
+		<div class="info-box-content">
+			<span class="info-box-text">Patients Checked In</span>
+			<span class="info-box-number">@Model.CheckedInCounter</span>
+		</div>
+	</div>
+</div>
+<!-- 3 COLUMN INFO BOX END -->

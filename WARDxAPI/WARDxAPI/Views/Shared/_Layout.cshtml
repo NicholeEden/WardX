@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD START -->
+<partial name="HTMLSections/_headPartial" />
+<!-- HEAD END -->
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed" style="background-color:ghostwhite">
+    <div class="wrapper">
+        <!-- NAVBAR START -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- LEFT NAVBAR LINKS START -->
+            <partial name="HTMLSections/_navbarLinksPartial" />
+            <!-- LEFT NAVBAR LINKS END -->
+            <!-- RIGHT NAVBAR LINKS START -->
+            <ul class="navbar-nav ml-auto">
+                @if (_signInManager.IsSignedIn(User))
+                {
+                    <!-- LOGOUT LINK START -->
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="/Account/Logout?returnUrl=@Context.Request.Path"
+                           class="nav-link">Sign out</a>
+                    </li>
+                    <!-- LOGOUT LINK END -->
+                }
+                <!-- MESSAGES DROPDOWN MENU START -->
+                @if (IsSectionDefined("messages"))
+                {
+                    @RenderSection("messages", required: false)
+                }
+                else
+                {
+                    <partial name="HTMLSections/_messagesPartial" model="null" />
+                }
+                <!-- MESSAGES DROPDOWN MENU END -->
+                <!-- NOTIFICATIONS DROPDOWN MENU START -->
+                @if (IsSectionDefined("notifications"))
+                {
+                    @RenderSection("notifications", required: false)
+                }
+                else
+                {
+                    <partial name="HTMLSections/Navbar/_notificationsPartial" />
+                }
+                <!-- NOTIFICATIONS DROPDOWN MENU END -->
+                <!-- CONTROL SIDEBAR [RIGHT] START -->
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-widget="control-sidebar"
+                       data-slide="true"
+                       href="#"
+                       role="button">
+                        <i class="fas fa-question-circle text-l text-lightblue"></i>
+                    </a>
+                </li>
+                <!-- CONTROL SIDEBAR [RIGHT] END -->
+            </ul>
+            <!-- RIGHT NAVBAR LINKS END -->
+        </nav>
+
+        <!-- NAVBAR END -->
+        <!-- MAIN SIDEBAR CONTAINER START -->
+        <aside class="main-sidebar sidebar-light-lightblue elevation-1">
+            <!-- BRAND LOGO START -->
+            <partial name="HTMLSections/Sidebar/_logoPartial" />
+            <!-- BRAND LOGO END -->
+            <!-- MAIN SIDEBAR CONTENT START -->
+            <div class="sidebar">
+                <!-- USER INFO START -->
+                <partial name="HTMLSections/Sidebar/_userInfoPartial" />
+                <!-- USER INFO END -->
+                <!-- SIDEBAR MENU START -->
+                <nav class="mt-2">
+                    <!-- SIDEBAR CONTAINER START -->
+                    <ul class="nav nav-pills nav-sidebar flex-column"
+                        data-widget="treeview"
+                        role="menu"
+                        data-accordion="false">
+                        <!-- SIDEBAR OPTION START -->
+                        @if (IsSectionDefined("profileMenu"))
+                        {
+                            @RenderSection("profileMenu", required: false)
+                        }
+                        else
+                        {
+                            <!-- ADD DEFAULT PARTIAL HERE -->
+                            <partial name="HTMLSections/Sidebar/_sidebarProfileMenuPartial" />
+                        }
+                        @if (IsSectionDefined("admissionMenu"))
+                        {
+                            @RenderSection("admissionMenu", required: false)
+                        }
+                        else
+                        {
+                            <!-- ADD DEFAULT PARTIAL HERE -->
+                            <partial name="HTMLSections/Sidebar/_sidebarAdmissionMenuPartial" />
+                        }
+                        @if (IsSectionDefined("movementMenu"))
+                        {
+                            @RenderSection("movementMenu", required: false)
+                        }
+                        else
+                        {
+                            <!-- ADD DEFAULT PARTIAL HERE -->
+                            <partial name="HTMLSections/Sidebar/_sidebarPatientMovePartial" />
+                        }
+                        @if (IsSectionDefined("appointmentMenu"))
+                        {
+                            @RenderSection("appointmentMenu", required: false)
+                        }
+                        else
+                        {
+                            <!-- ADD DEFAULT PARTIAL HERE -->
+                            <partial name="HTMLSections/Sidebar/_sidebarAppointmentPartial" />
+                        }
+                        @if (IsSectionDefined("treatmentMenu"))
+                        {
+                            @RenderSection("treatmentMenu", required: false)
+                        }
+                        else
+                        {
+                            <!-- ADD DEFAULT PARTIAL HERE -->
+                            <partial name="HTMLSections/Sidebar/_sidebarTreatmentMenuPartial" />
+
+                        }
+                        <!-- SIDEBAR OPTION END -->
+                    </ul>
+                    <!-- SIDEBAR CONTAINER END -->
+                </nav>
+                <!-- SIDEBAR MENU END -->
+            </div>
+            <!-- MAIN SIDEBAR CONTENT END -->
+        </aside>
+        <!-- MAIN SIDEBAR CONTAINER END -->
+        <!-- BODY CONTAINER START -->
+        <div class="content-wrapper">
+            @RenderBody()
+            <!-- MODAL PARTIAL HERE -->
+            <partial name="Help/Profile/_searchPartial" />
+            <partial name="Help/Profile/_createPartial" />
+            <partial name="Help/PatientMove/_checkOutPartial" />
+            <partial name="Help/PatientMove/_checkInPartial" />
+            <partial name="Help/Admission/_admitPartial" />
+            <partial name="Help/Admission/_EditAdmissionFilePartial" />
+        </div>
+        <!-- BODY CONTAINER END -->
+        <!-- CONTROL SIDEBAR START -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- SIDEBAR CONTENT START -->
+            <div class="p-3 control-sidebar-content">
+                <h5>
+                    WARDx Help Area
+                </h5>
+                <hr class="mb-2" />
+                <!-- SECTION HEADER -->
+                <h6>Patient Profile</h6>
+                <!-- PATIENT SEARCH -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#patientSearchHelp">
+                        How to search for a patient.
+                    </a>
+                </div>
+                <!-- PATIENT CREATE -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#patientCreateHelp">
+                        How to create a patient profile.
+                    </a>
+                </div>
+                <br />
+                <!-- SECTION HEADER -->
+                <h6>Patient Movement</h6>
+                <!-- PATIENT MOVE CHECK OUT -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#patientMoveHelp">
+                        How to check out a patient.
+                    </a>
+                </div>
+                <!-- PATIENT MOVE CHECK IN -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#patientMoveInHelp">
+                        How to check in a patient.
+                    </a>
+                </div>
+                <br />
+                <!--SECTION HEADER-->
+                <h6>Admission</h6>
+                <!-- ADMISSION CREATE -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#admitHelp">
+                        How to admit a patient.
+                    </a>
+                </div>
+                <!-- ADMISSION EDIT -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#EditHelp">
+                        How to Edit AdmissionFile.
+                    </a>
+                </div>
+                <!--SECTION HEADER-->
+                <h6>Treatment</h6>
+                <!-- TREAT CREATE -->
+                <div class="mb-1">
+                    <a href="#"
+                       data-toggle="modal"
+                       data-target="#TreatHelp">
+                        How to record patient treatment.
+                    </a>
+                </div>
+                
+            </div>
+            <!-- SIDEBAR CONTENT END -->
+        </aside>
+        <!-- CONTROL SIDEBAR END -->
+        <!-- PAGE FOOTER START -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Tech Buzz Solutions
+            </div>
+            <!-- Default to the left -->
+            <strong>Design based on <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+        <!-- PAGE FOOTER END -->
+    </div><!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS START -->
+    <!-- jQuery [jquery.min.js] -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+
+    <!-- JQuery Smart Wizard CSS JavaScript -->
+    <script src="~/lib/JQuery Smart Wizard/jquery.smartWizard.min.js"></script>
+    <!-- Bootstrap 4 [bootstrap.bundle.min.js] -->
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <partial name="HTMLSections/_jQuery-validatePartial" />
+    <!-- Bootstrap-select [bootstrap-select.min.js]-->
+    <script src="~/lib/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/lib/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- Input Mask -->
+    <script src="~/lib/moment/moment.min.js"></script>
+    <script src="~/lib/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- DataTable -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/lib/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/lib/jszip/jszip.min.js"></script>
+    <script src="~/lib/pdfmake/pdfmake.min.js"></script>
+    <script src="~/lib/pdfmake/vfs_fonts.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- Date range picker-->
+    <script src="~/lib/daterangepicker/daterangepicker.js"></script>
+    <!-- Summernote -->
+    <script src="~/lib/summernote/summernote-bs4.min.js"></script>
+    <!-- Chart.js -->
+    <script src="~/lib/chart.js/Chart.bundle.min.js"></script>
+    <!-- AdminLTE App [adminlte.min.js] -->
+    <script src="~/lib/AdminLTE/js/adminlte.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+    <!-- REQUIRED SCRIPTS END -->
+</body>
+</html>
